@@ -22,7 +22,9 @@ menupopup {
 }
 
 menu menupopup {
+	margin-top: -4px !important;
 	margin:	-14px -8px 0px 0px !important;
+	min-height: 200px;
 }
 
 menulist {
@@ -163,4 +165,23 @@ menuseparator {
 }
 menuseparator::before {
 	display: none !important;
+}
+
+
+menubar > menu {
+  background-color: transparent !important;
+  transition: all 0.3s ease;
+  padding: 6px;
+  &:hover {
+    background-color: transparent !important;
+  }
+  &[open] {
+    background-color: var(--gnome-selected-color) !important;
+    border-bottom-color: transparent !important;
+    border-radius: 8px !important;
+  }
+}
+
+#tabs-toolbar, .inline-toolbar, .contentTabToolbar, toolbar, #event-toolbar {
+  border-bottom: none !important;
 }

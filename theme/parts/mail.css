@@ -229,3 +229,22 @@ link[href="chrome://global/content/elements/moz-message-bar.css"] + .container {
 		font-weight: bold !important;
 	}
 }
+
+hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box { margin-right: 8px !important; }
+
+.address-label-container, #identityLabel-box, #subjectLabel-box {
+  width: 40px !important;
+  margin-left: -0.5em !important;
+  overflow:hidden !important;
+}
+
+/* Overwrite text labels to ensure there is enough space */
+label#toAddrLabel::before {content: "To" !important;}
+label#replyAddrLabel::before {content: "RE" !important;}
+label#ccAddrLabel::before {content: "CC" !important;}
+label#bccAddrLabel::before {content: "BCC" !important;}
+label#subjectLabel::before, #subjectLabel::before {content: "Sub." !important;}
+
+hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box {
+  margin-right: 8px !important;
+  }

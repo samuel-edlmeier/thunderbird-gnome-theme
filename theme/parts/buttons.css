@@ -345,10 +345,15 @@ link[href="chrome://global/content/elements/moz-button.css"] + button[type~="ico
 #spacesToolbarReveal,
 #calendar-status-todaypane-button {
 	padding-top: 0 !important;
-	padding-bottom: : 0 !important;
+	padding-bottom: 0 !important;
 	height: 22px !important;
 	max-height: 22px !important;
 	min-height: 22px !important;
 	min-width: 22px !important;
 }
 
+/* SE Fix TB Landing Page */
+#filterButton::before, #composeButton::before, #searchButton::before, #readButton::before   {
+	fill: var(--gnome-toolbar-icon-fill) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}

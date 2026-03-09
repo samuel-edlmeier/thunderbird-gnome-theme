@@ -7,3 +7,8 @@
  * default) will be included here and preserved between updates. 
  * You can apply your own custom styles in that file. */
 @import "customChrome.css"; /**/
+
+/* HIDE Menu bar in message compose windows */
+#compose-toolbar-menubar2 {
+  display: none !important;
+}

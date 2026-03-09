@@ -6,7 +6,7 @@
 .button.icon-button,
 .toolbarbutton-1,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker, 
 link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"],
 link[href="chrome://global/content/elements/moz-message-bar.css"] + .container .icon,
 .preview-icon,
@@ -55,6 +55,7 @@ checkbox.treenode-checkbox > .checkbox-check,
 #attachmentToggle,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
+.menu-icon,
 .menu-iconic-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
@@ -294,7 +295,9 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 menuitem[type="checkbox"][checked="true"] {
-	list-style-image: url("../icons/select-symbolic.svg") !important;
+	list-style-image: url("../icons/check.svg") !important;
+	fill: var(--gnome-toolbar-icon-fill) !important;
+	-moz-context-properties: fill, fill-opacity !important;
 }
 menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;
@@ -448,3 +451,30 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 #spacesToolbarReveal {
 	background-image: url("../icons/last-symbolic.svg") !important;
 }
+
+/* composer windows */
+#button-url { list-style-image: url("../icons/mail-attachment-symbolic.svg") !important; }
+#button-attach { list-style-image: url("../icons/mail-attachment-symbolic.svg") !important; }
+#button-send { list-style-image: url("../icons/mail-symbolic.svg") !important; }
+button#setupEmail.btn-inline::before { --icon-mail: var(--account-central-mail) !important; }
+button#setupAddressBook.btn-inline::before { --icon-address-book: var(--account-central-address-book) !important; }
+button#setupCalendar.btn-inline::before { --icon-calendar: var(--account-central-calendar) !important; }
+button#setupFilelink.btn-inline::before { --icon-link: var(--account-central-link) !important; }
+button#setupChat.btn-inline::before { --icon-chat: var(--account-central-chat) !important; }
+button#setupFeeds.btn-inline::before { --icon-rss: var(--account-central-rss) !important; }
+button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-central-newsletter) !important;}
+#button-encryption { list-style-image: url("../icons/padlock-insecure-symbolic.svg") !important; }
+#spellingButton { list-style-image: url("../icons/tools-check-spelling-symbolic.svg") !important; }
+#button-attendees, #button-contacts { list-style-image: url("../icons/address-book-symbolic.svg") !important; }
+#button-save, #button-saveandclose { list-style-image: url("../icons/folder-download-symbolic.svg") !important; }
+#toolbarbutton-menubutton-dropmarker, .toolbarbutton-menubutton-dropmarker { content: url("../icons/pan-down-symbolic.svg") !important; }
+#button-privacy { list-style-image: url("../icons/padlock-symbolic.svg") !important; }
+#button-delete { list-style-image: url("../icons/user-trash-symbolic.svg") !important; }
+& #abContextMenuButton { list-style-image: url("../icons/view-more-symbolic.svg") !important; }
+
+/* SE Fix TB Landing Page */
+#readButton::before { background-image: url("../icons/inbox-symbolic.svg") !important; }
+#searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
+#composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }
+#filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }
+

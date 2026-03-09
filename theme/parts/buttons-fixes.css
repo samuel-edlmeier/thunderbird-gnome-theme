@@ -101,3 +101,84 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 #calendar-status-todaypane-button .toolbarbutton-icon-end {
 	display: none;
 }
+
+/* Composer Window, Landing Page */
+toolbarbutton#button-send, 
+#button-send, 
+#setupEmail, 
+#setupAddressBook, 
+#setupCalendar, 
+#setupFilelink, 
+#setupChat,
+#setupFeeds, 
+#setupNewsgroups,
+#importButton {
+  background-color: var(--gnome-accent-bg) !important;
+  font-weight: 700 !important;
+}
+
+button#setupEmail.btn-hub.btn-inline,
+toolbarbutton#button-send.toolbarbutton-1 label.toolbarbutton-text, 
+button#setupEmail, 
+button#setupAddressBook, 
+button#setupCalendar, 
+button#setupFilelink, 
+button#setupChat,
+button#setupFeeds, 
+button#setupNewsgroups,
+button#importButton {
+  color: var(--gnome-palette-light-1) !important;
+}
+
+#button-send:hover:not([disabled="true"]), 
+#setupEmail:hover:not([disabled="true"]), 
+#setupAddressBook:hover:not([disabled="true"]), 
+#setupCalendar:hover:not([disabled="true"]), 
+#setupFilelink:hover:not([disabled="true"]), 
+#setupChat:hover:not([disabled="true"]),
+#setupFeeds:hover:not([disabled="true"]),
+#setupNewsgroups:hover:not([disabled="true"]),
+#importButton:hover:not([disabled="true"]),
+#button-send:hover:not([disabled="true"]) {
+  filter: brightness(1.1); 
+}
+
+#setupEmail:active:not([disabled="true"]), 
+#setupAddressBook:active:not([disabled="true"]), 
+#setupCalendar:active:not([disabled="true"]), 
+#setupFilelink:active:not([disabled="true"]), 
+#setupChat:active:not([disabled="true"]),
+#setupFeeds:active:not([disabled="true"]), 
+#setupNewsgroups:active:not([disabled="true"]),
+#importButton:active:not([disabled="true"]),
+#button-send:active:not([disabled="true"]) {
+  filter: brightness(0.9);
+}
+
+#button-send .toolbarbutton-icon,
+#button-send .toolbarbutton-text {
+  fill: var(--gnome-palette-light-1) !important;
+  color: var(--gnome-palette-light-1) !important;
+}
+#setupEmail, 
+#setupAddressBook, 
+#setupCalendar, 
+#setupFilelink, 
+#setupChat, 
+#setupFeeds, 
+#setupNewsgroups,
+#importButton {
+  fill: var(--gnome-accent-bg) !important;
+  color: var(--gnome-palette-light-1) !important;
+  stroke: var(--gnome-palette-light-1) !important;
+  -moz-context-properties: fill, stroke !important;
+}
+.btn-hub {
+  box-shadow: none !important;
+  stroke: none !important;
+}
+
+/* Mail Composer */
+button#toButton hbox.box-inherit.button-box label.button-text::before {content: "TO" !important;}
+button#ccButton hbox.box-inherit.button-box label.button-text::before {content: "CC" !important;}
+button#bccButton hbox.box-inherit.button-box label.button-text::before {content: "BCC" !important;}
