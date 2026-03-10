@@ -23,7 +23,7 @@ menupopup {
 
 menu menupopup {
 	margin-top: -4px !important;
-	margin:	-14px -8px 0px 0px !important;
+	margin:	-4px -8px 0px 0px !important;
 	min-height: 200px;
 }
 
@@ -166,7 +166,6 @@ menuseparator {
 menuseparator::before {
 	display: none !important;
 }
-
 
 menubar > menu {
   background-color: transparent !important;

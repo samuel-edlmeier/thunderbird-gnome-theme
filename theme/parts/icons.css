@@ -294,6 +294,15 @@ treechildren::-moz-tree-image(selected, focus, open),
 menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
+
+menubar#mail-menubar menu  menupopup {
+  & > :is(menu, menuitem) {
+    &[checked="true"], &[selected="true"] {
+      --menuitem-icon: url("chrome://messenger/skin/icons/new/compact/check.svg") !important;
+    }
+  }
+}
+
 menuitem[type="checkbox"][checked="true"] {
 	list-style-image: url("../icons/check.svg") !important;
 	fill: var(--gnome-toolbar-icon-fill) !important;
@@ -383,7 +392,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 
 /* Search entries */
 .textbox-search-sign {
-	list-style-image: url(../icons/edit-find-symbolic.svg) !important;
+	list-style-image: url("../icons/edit-find-symbolic.svg") !important;
 }
 .textbox-search-sign {
 	margin: 3px 0;
@@ -452,7 +461,7 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 	background-image: url("../icons/last-symbolic.svg") !important;
 }
 
-/* composer windows */
+/* composer window */
 #button-url { list-style-image: url("../icons/mail-attachment-symbolic.svg") !important; }
 #button-attach { list-style-image: url("../icons/mail-attachment-symbolic.svg") !important; }
 #button-send { list-style-image: url("../icons/mail-symbolic.svg") !important; }
