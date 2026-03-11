@@ -8,6 +8,14 @@
   border-bottom: none !important;
 }
 
+/* multi-message thread styling */
+#headingWrapper,
+#attachmentBar {
+  background: var(--gnome-window-background) !important;
+  padding: 15px !important;
+  border-bottom: none !important;
+}
+
 #heading {
   align-items: flex-start !important;
   display: flex !important;
@@ -18,6 +26,7 @@
 }
 
 span#size {
+  font-size: 12px !important;
   padding-left: 10px !important;
 }
 
@@ -41,5 +50,5 @@ span#summarySubtitle {
   left: 10px !important;
   right: 10px !important;
   height: 1px !important;
-  background: var(--gnome-toolbar-border-color) !important;
+  background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
