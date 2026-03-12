@@ -52,3 +52,57 @@ span#summarySubtitle {
   height: 1px !important;
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
+
+/* Contacts */
+button#booksPaneCreateContact:active:not([disabled="true"]) {
+  filter: brightness(0.9);
+}
+button#booksPaneCreateContact:hover:not([disabled="true"]){
+  filter: brightness(1.1); 
+}
+
+div#booksPane {
+  text-rendering: optimizeLegibility !important;
+}
+
+div#booksPane #button{
+  border-radius: 6px !important;
+}
+
+button#booksPaneCreateContact {
+  color: var(--gnome-palette-light-1) !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  min-width: 140px !important;
+  background-color: var(--gnome-accent-bg) !important;
+  background-size: 24px 24px !important;
+  background-position: 9px 6px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  --icon-size: 24px !important;
+  padding-inline-start: calc(9px * 1.5 + 16) !important;
+  padding-inline-end: calc(var(--button-padding) * 2) !important; 
+  min-block-size: 24px;
+  outline: 0 !important;
+  -moz-box-align: center !important; 
+}
+
+article#viewContact button,
+form#editContactForm button {
+border-radius: 6px !important;  
+}
+
+/* Contact Buttons */
+button#detailsDeleteButton {
+  color: var(--gnome-palette-light-1) !important;
+  background-color: var(--vcard-delete-button-color) !important
+}
+button#detailsDeleteButton:active:not([disabled="true"]) {
+  filter: brightness(0.9) !important;
+}
+button#detailsDeleteButton:hover:not([disabled="true"]){
+  filter: brightness(1.1) !important;
+}

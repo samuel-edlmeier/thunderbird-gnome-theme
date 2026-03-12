@@ -64,7 +64,8 @@ menupopup > menu::after,
 menuitem[type="checkbox"],
 menuitem[type="checkbox"][checked="true"],
 menuitem[type="radio"],
-menuitem[type="radio"][checked="true"] {
+menuitem[type="radio"][checked="true"] 
+{
 	fill: var(--gnome-toolbar-icon-fill) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 }
@@ -95,7 +96,7 @@ menuitem[type="radio"][checked="true"] {
 	--spaces-icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
 	--spaces-icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
 	--spaces-icon-chat: var(--gnome-icon-chat-bubbles-text-symbolic) !important;
-	/*--spaces-icon-overflow: var(--gnome-icon-last-symbolic) !important;*/
+	--spaces-icon-overflow: var(--gnome-icon-last-symbolic) !important;
 	--spaces-icon-settings: var(--gnome-icon-settings-symbolic) !important;
 	--spaces-icon-collapse: var(--gnome-icon-first-symbolic) !important;
 	--icon-collapse: var(--gnome-icon-first-symbolic) !important;
@@ -182,10 +183,8 @@ menuitem[type="radio"][checked="true"] {
 	--icon-lock-disabled: var(--gnome-icon-padlock-insecure-symbolic) !important;
 	--icon-spelling: var(--gnome-icon-tools-check-spelling-symbolic) !important;
 	--icon-new-chat:var(--gnome-icon-chat-bubbles-text-symbolic) !important;
-	
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
-	
 	--font-size-decrease: var(--gnome-icon-zoom-out-symbolic) !important;
 	--font-size-increase: var(--gnome-icon-zoom-in-symbolic) !important;
 }
@@ -295,7 +294,8 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 
-menubar#mail-menubar menu  menupopup {
+toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,
+menubar#mail-menubar menu menupopup {
   & > :is(menu, menuitem) {
     &[checked="true"], &[selected="true"] {
       --menuitem-icon: url("chrome://messenger/skin/icons/new/compact/check.svg") !important;
@@ -481,7 +481,7 @@ button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-cen
 #button-delete { list-style-image: url("../icons/user-trash-symbolic.svg") !important; }
 & #abContextMenuButton { list-style-image: url("../icons/view-more-symbolic.svg") !important; }
 
-/* SE Fix TB Landing Page */
+/* Fix TB Landing Page */
 #readButton::before { background-image: url("../icons/inbox-symbolic.svg") !important; }
 #searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
 #composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }

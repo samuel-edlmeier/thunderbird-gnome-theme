@@ -138,8 +138,7 @@ button#importButton {
 #setupChat:hover:not([disabled="true"]),
 #setupFeeds:hover:not([disabled="true"]),
 #setupNewsgroups:hover:not([disabled="true"]),
-#importButton:hover:not([disabled="true"]),
-#button-send:hover:not([disabled="true"]) {
+#importButton:hover:not([disabled="true"]){
   filter: brightness(1.1); 
 }
 

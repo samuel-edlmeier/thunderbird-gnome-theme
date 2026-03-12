@@ -11,3 +11,10 @@
 section.account-central-section aside.row-container, p#donationParagraph {
   line-height: 1.5;
 }
+
+
+.account-hub-dialog {
+  &::after {
+    --hub-blur-radius: none !important;
+  }
+}
