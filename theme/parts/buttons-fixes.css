@@ -103,6 +103,8 @@ link[href="chrome://global/skin/menulist.css"] ~ dropmarker {
 }
 
 /* Composer Window, Landing Page */
+button#donebutton,
+toolbarbutton#button-saveandclose,
 toolbarbutton#button-send, 
 #button-send, 
 #setupEmail, 
@@ -117,7 +119,9 @@ toolbarbutton#button-send,
   font-weight: 700 !important;
 }
 
+button#donebutton,
 button#setupEmail.btn-hub.btn-inline,
+toolbarbutton#button-saveandclose.toolbarbutton-1 label.toolbarbutton-text,
 toolbarbutton#button-send.toolbarbutton-1 label.toolbarbutton-text, 
 button#setupEmail, 
 button#setupAddressBook, 
@@ -130,6 +134,9 @@ button#importButton {
   color: var(--gnome-palette-light-1) !important;
 }
 
+button#restoreDefault:active:not([disabled="true"]), 
+button#donebutton:hover:not([disabled="true"]), 
+toolbarbutton#button-saveandclose:hover:not([disabled="true"]), 
 #button-send:hover:not([disabled="true"]), 
 #setupEmail:hover:not([disabled="true"]), 
 #setupAddressBook:hover:not([disabled="true"]), 
@@ -139,9 +146,11 @@ button#importButton {
 #setupFeeds:hover:not([disabled="true"]),
 #setupNewsgroups:hover:not([disabled="true"]),
 #importButton:hover:not([disabled="true"]){
-  filter: brightness(1.1); 
+  filter: brightness(1.1) !important;; 
 }
 
+button#restoreDefault:hover:not([disabled="true"]), 
+button#donebutton:active:not([disabled="true"]), 
 #setupEmail:active:not([disabled="true"]), 
 #setupAddressBook:active:not([disabled="true"]), 
 #setupCalendar:active:not([disabled="true"]), 
@@ -150,10 +159,13 @@ button#importButton {
 #setupFeeds:active:not([disabled="true"]), 
 #setupNewsgroups:active:not([disabled="true"]),
 #importButton:active:not([disabled="true"]),
+toolbarbutton#button-saveandclose:active:not([disabled="true"]),
 #button-send:active:not([disabled="true"]) {
-  filter: brightness(0.9);
+  filter: brightness(0.9) !important;
 }
 
+toolbarbutton#button-saveandclose .toolbarbutton-icon,
+toolbarbutton#button-saveandclose .toolbarbutton-text 
 #button-send .toolbarbutton-icon,
 #button-send .toolbarbutton-text {
   fill: var(--gnome-palette-light-1) !important;
@@ -178,6 +190,18 @@ button#importButton {
 }
 
 /* Mail Composer */
-button#toButton hbox.box-inherit.button-box label.button-text::before {content: "TO" !important;}
+button#toButton hbox.box-inherit.button-box label.button-text::before {content: "To" !important;}
 button#ccButton hbox.box-inherit.button-box label.button-text::before {content: "CC" !important;}
 button#bccButton hbox.box-inherit.button-box label.button-text::before {content: "BCC" !important;}
+
+
+html#CustomizeToolbarWindow button {
+	border-radius: 6px !important;
+  border: 0 !important;
+  font-weight: 700 !important;
+  padding: 2px 15px !important;
+  height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
+}

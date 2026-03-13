@@ -21,6 +21,10 @@ menupopup {
 	padding: 8px !important;
 }
 
+html#CustomizeToolbarWindow menupopup#modelistpopup.in-menulist {
+	min-height: 200px !important;
+}
+
 menu menupopup {
 	margin-top: -4px !important;
 	margin:	-4px -8px 0px 0px !important;
