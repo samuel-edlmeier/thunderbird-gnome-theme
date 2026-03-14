@@ -55,7 +55,7 @@ checkbox.treenode-checkbox > .checkbox-check,
 #attachmentToggle,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
-.menu-icon,
+popupset menupopup#mailContext.no-icon-menupopup img.menu-icon,
 .menu-iconic-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
@@ -194,7 +194,6 @@ menuitem[type="radio"][checked="true"]
 		fill: #fff !important;
 	}
 }
-
 /* Tinted icons */
 #folderTree .icon {
 	-moz-context-properties: fill, fill-opacity !important;
@@ -264,6 +263,7 @@ treechildren::-moz-tree-twisty(selected, focus, open),
 treechildren::-moz-tree-image(selected, focus),
 treechildren::-moz-tree-image(selected, focus, open),
 .item.client:focus .item-twisty-container,
+toolbarbutton#button-send.toolbarbutton-1 .toolbarbutton-icon,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
 	fill: #fff !important;
@@ -294,6 +294,8 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 
+menupopup#sidebarAbContextMenu.no-accel-menupopup,
+menupopup.textbox-contextmenu,
 menupopup#msgComposeContext,
 toolbox#event-toolbox.mail-toolbox toolbar,
 toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,

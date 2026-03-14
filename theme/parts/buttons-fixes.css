@@ -161,7 +161,7 @@ button#donebutton:active:not([disabled="true"]),
 #importButton:active:not([disabled="true"]),
 toolbarbutton#button-saveandclose:active:not([disabled="true"]),
 #button-send:active:not([disabled="true"]) {
-  filter: brightness(0.9) !important;
+  filter: brightness(0.8) !important;
 }
 
 toolbarbutton#button-saveandclose .toolbarbutton-icon,
