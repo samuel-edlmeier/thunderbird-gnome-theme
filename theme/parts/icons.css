@@ -294,6 +294,7 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 
+toolbox#event-toolbox.mail-toolbox toolbar menubar#event-menubar menu menupopup,
 toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,
 menubar#mail-menubar menu menupopup {
   & > :is(menu, menuitem) {
@@ -486,4 +487,3 @@ button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-cen
 #searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
 #composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }
 #filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }
-

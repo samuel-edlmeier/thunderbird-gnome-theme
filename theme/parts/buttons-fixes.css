@@ -171,6 +171,7 @@ toolbarbutton#button-saveandclose .toolbarbutton-text
   fill: var(--gnome-palette-light-1) !important;
   color: var(--gnome-palette-light-1) !important;
 }
+
 #setupEmail, 
 #setupAddressBook, 
 #setupCalendar, 
@@ -184,6 +185,7 @@ toolbarbutton#button-saveandclose .toolbarbutton-text
   stroke: var(--gnome-palette-light-1) !important;
   -moz-context-properties: fill, stroke !important;
 }
+
 .btn-hub {
   box-shadow: none !important;
   stroke: none !important;
@@ -193,7 +195,6 @@ toolbarbutton#button-saveandclose .toolbarbutton-text
 button#toButton hbox.box-inherit.button-box label.button-text::before {content: "To" !important;}
 button#ccButton hbox.box-inherit.button-box label.button-text::before {content: "CC" !important;}
 button#bccButton hbox.box-inherit.button-box label.button-text::before {content: "BCC" !important;}
-
 
 html#CustomizeToolbarWindow button {
 	border-radius: 6px !important;
