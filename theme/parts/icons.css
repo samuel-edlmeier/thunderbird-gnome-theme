@@ -294,8 +294,10 @@ menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
 
-toolbox#event-toolbox.mail-toolbox toolbar menubar#event-menubar menu menupopup,
+menupopup#msgComposeContext,
+toolbox#event-toolbox.mail-toolbox toolbar,
 toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,
+menubar#event-menubar menu menupopup,
 menubar#mail-menubar menu menupopup {
   & > :is(menu, menuitem) {
     &[checked="true"], &[selected="true"] {
