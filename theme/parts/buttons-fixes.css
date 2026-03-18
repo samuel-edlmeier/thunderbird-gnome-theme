@@ -196,13 +196,12 @@ button#toButton hbox.box-inherit.button-box label.button-text::before {content: 
 button#ccButton hbox.box-inherit.button-box label.button-text::before {content: "CC" !important;}
 button#bccButton hbox.box-inherit.button-box label.button-text::before {content: "BCC" !important;}
 
-html#CustomizeToolbarWindow button {
-	border-radius: 6px !important;
-  border: 0 !important;
-  font-weight: 700 !important;
-  padding: 2px 15px !important;
-  height: 34px !important;
-	max-height: 34px !important;
-	min-height: 34px !important;
-	min-width: 34px !important;
+/* Mail Account Overview */
+ol#accounttree li ul lihbox#label-box label#label {
+  font-weight: 400 !important;
+}
+
+button#accountTreeCreateAccount,
+button#booksPaneCreateContact {
+  background-color: var(--gnome-accent-bg) !important;
 }

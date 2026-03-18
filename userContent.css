@@ -1,5 +1,6 @@
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
+
 /* multi-message thread styling */
 #headingWrapper,
 #attachmentBar {
@@ -53,32 +54,54 @@ span#summarySubtitle {
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 
-/* Contacts */
-button#booksPaneCreateContact:active:not([disabled="true"]) {
-  filter: brightness(0.9);
-}
-button#booksPaneCreateContact:hover:not([disabled="true"]){
-  filter: brightness(1.1); 
-}
-
-div#booksPane {
-  text-rendering: optimizeLegibility !important;
-}
-
-div#booksPane #button{
+/* verified */
+html#MailPreferences menulist {
   border-radius: 6px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  min-width: 34px !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  -moz-box-align: center !important;
+  overflow: hidden !important;
 }
 
+/* verified */
+discovery-pane button,
+hbox button,
+button#remoteContentExceptions,
+article#viewContact button,
+vbox#containerBox select,
+div#booksPane button, /* import, up, down*/
+addon-card button, /* settings */
+addon-list button, /* settings */
+form#editContactForm div#detailsFooter.button-block button,
+html#MailPreferences button {
+  border-radius: 6px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  min-width: 34px !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  -moz-box-align: center !important;
+  overflow: hidden !important;
+}
+
+/* verified, buttons with icons */
+button#deleteAccount,
+button#accountTreeCreateAccount,
 button#booksPaneCreateContact {
   color: var(--gnome-palette-light-1) !important;
   height: 34px !important;
   min-height: 34px !important;
   max-height: 34px !important;
   min-width: 140px !important;
-  background-color: var(--gnome-accent-bg) !important;
   background-size: 24px 24px !important;
   background-position: 9px 6px !important;
-  border-radius: 6px !important;
   border: none !important;
   font-weight: 700 !important;
   font-size: 15px !important;
@@ -87,22 +110,250 @@ button#booksPaneCreateContact {
   padding-inline-end: calc(var(--button-padding) * 2) !important; 
   min-block-size: 24px;
   outline: 0 !important;
-  -moz-box-align: center !important; 
+  -moz-box-align: center !important;
 }
 
-article#viewContact button,
-form#editContactForm button {
-border-radius: 6px !important;  
-}
-
-/* Contact Buttons */
-button#detailsDeleteButton {
+button#detailsDeleteButton /* verified, Delete Contact */ { 
   color: var(--gnome-palette-light-1) !important;
   background-color: var(--vcard-delete-button-color) !important
 }
+
+button#accountTreeCreateAccount:active:not([disabled="true"]),
+button#booksPaneCreateContact:active:not([disabled="true"]),
+html#MailPreferences button:active:not([disabled="true"]),
 button#detailsDeleteButton:active:not([disabled="true"]) {
-  filter: brightness(0.9) !important;
+  filter: brightness(0.8) !important;
 }
+button#accountTreeCreateAccount:hover:not([disabled="true"]),
+button#booksPaneCreateContact:hover:not([disabled="true"]),
+html#MailPreferences button:hover:not([disabled="true"]),
 button#detailsDeleteButton:hover:not([disabled="true"]){
   filter: brightness(1.1) !important;
 }
+
+form#editContactForm select,
+html#messengerWindow select,
+html#calendar-summary-dialog button,
+html#CustomizeToolbarWindow button {
+	border-radius: 6px !important;
+  border: 0 !important;
+  font-weight: 700 !important;
+  padding: 2px 15px !important;
+  height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
+}
+
+/* verified Settings Account Manager */
+
+hbox#label-box label#label {
+  font-weight: 700 !important;
+}
+
+tree-view#cards tr.card-layout {
+	background: var(--gnome-secondary-sidebar-background) !important;
+	height: auto !important;
+	
+	/* Spacing */
+	td {
+		padding: 12px 12px !important;
+	}
+	&:not(:first-child) td {
+		padding-top: 0 !important;
+	}
+	/* Card */
+	.card-container {
+		--thread-card-content-gap: 6px !important;
+		background: none !important;
+		border: 0 !important;
+		border-radius: 6px !important;
+		grid-template-columns: 1fr !important;
+		min-height: 60px !important;
+
+
+
+		/* Remove selected indicator */
+		&::before {
+			content: none !important;
+		}
+	}
+
+  	/* Hover */
+	&:hover .card-container {
+		box-shadow: none !important;
+	}
+	&:not(.selected):hover .card-container {
+		background: var(--gnome-hover-color) !important;
+	}
+	/* Active */
+	&.selected .card-container {
+		background: var(--gnome-selected-color) !important;
+	}
+}
+
+#booksPane {
+ --sidebar-background-color: var(--gnome-sidebar-background) !important;
+ --sidebar-background: var(--sidebar-background-color) !important;
+}
+
+/* Contacts Popups */
+menupopup#bookContext, 
+menupopup#cardContext,
+menupopup#sortContext,
+#bookContext slot[part="content"],
+#cardContext slot[part="content"],
+#sortContext slot[part="content"] {
+	--panel-padding: 0 !important;
+	--panel-color: var(--gnome-menu-color) !important;
+	--panel-background: var(--gnome-menu-background) !important;
+	--panel-border-radius: 12px !important;
+	--panel-border-color: var(--gnome-menu-border-color) !important;
+	--panel-shadow: var(--gnome-menu-shadow) !important;
+	--panel-shadow-margin: 6px !important;
+	--arrowpanel-background: var(--gnome-menu-background) !important;
+	--arrowpanel-border-radius: 12px !important;
+}
+/*html menupopup#bookContext menuitem#bookContextProperties*/
+menupopup#bookContext, 
+menupopup#cardContext,
+menupopup#sortContext {
+  -moz-appearance: none !important;
+  color: var(--gnome-toolbar-color) !important;
+  padding: 8px !important;
+}
+
+arrowscrollbox.menupopup-arrowscrollbox {
+	-moz-appearance: none !important;
+	background: var(--gnome-menu-background) !important;
+	border: 1px solid var(--gnome-border-color) !important;
+	border-radius: 12px !important;
+	box-shadow: var(--gnome-menu-shadow) !important;
+	padding: 6px !important;
+	margin-bottom: 20px !important;
+}
+
+menupopup#bookContext menuitem,
+menupopup#cardContext menuitem,
+menupopup#sortContext menuitem {
+	-moz-appearance: none !important;
+	border-radius: 6px !important;	
+	color: var(--gnome-window-color) !important;
+	font: menu !important;
+	padding: 4px 12px !important;
+	min-height: 32px !important;
+}
+
+menuitem:is([type="checkbox"], [checked="true"]) .menu-iconic-icon,
+menuitem[type="radio"] .menu-iconic-icon {
+	appearance: none !important;
+}
+menuitem:not(.menuitem-iconic) {
+	padding-right: 18px !important;
+}
+menuitem :is(label, description)[value][crop]::before {
+	min-width: min-content !important;
+}
+menuitem:not([acceltext]) .menu-accel-container {
+	visibility: collapse !important;
+}
+menuitem[type="checkbox"] image, menuitem[type="radio"] image {
+	visibility: visible !important;
+}
+menuitem[disabled="true"]:hover, menupopup menu[disabled="true"]:hover {
+	background: transparent !important;
+}
+
+menuseparator {
+	padding: 0 !important;
+  border-top: 1px solid var(--gnome-menu-separator-color) !important;
+	margin: 6px 0 !important;
+  appearance: none !important;
+}
+
+menuseparator::before {
+	display: none !important;
+}
+
+div#booksPane div.bookRow-container.container {
+  	background: none !important;
+		border: 0 !important;
+		border-radius: 6px !important;
+
+  	&::before {
+			content: none !important;
+		}
+  	/* Hover */
+    &:hover {
+      box-shadow: none !important;
+    }
+    &:not(.selected):hover {
+      background: var(--gnome-hover-color) !important;
+    }
+    /* Active */
+    &.selected {
+      background: var(--gnome-selected-color) !important;
+    }
+    span.bookRow-name {
+      font-size: 1rem !important;
+    }
+}
+
+hr#booksSplitter {
+	--splitter-occupy-size: 0px !important;
+}
+
+/* Entries */
+form input:not([type="checkbox"]) {
+	height: 34px !important;
+	max-height: 34px !important;
+}
+
+form input:not([type="checkbox"]),
+form#editContactForm textarea {
+	-moz-appearance: none !important;
+	background: var(--gnome-entry-background) !important;
+	outline: 2px solid transparent !important;
+	border: 0 !important;
+	border-radius: 8px !important;
+	box-shadow: none !important;
+	color: var(--gnome-entry-color) !important;
+	padding: 6px 9px !important;
+	box-sizing: border-box;
+}
+
+input:not([type="checkbox"]):focus {
+	outline: 2px solid var(--selected-item-color) !important;
+	outline-offset: -2px !important;
+  box-shadow: none !important;
+}
+
+input:-moz-window-inactive {
+	color: var(--gnome-inactive-entry-color) !important;
+	outline: 2px solid transparent !important;
+}
+
+form input {
+  &::-moz-search-clear-button {
+    inline-size: 48px !important;
+  }
+}
+
+#cardsPane {
+  background-color: var(--sidebar-background) !important;
+}
+
+div#detailsPane div#detailsBody {
+  & section {
+    border:0px !important;
+    background-color: inherit !important;
+  }
+}
+/*
+var(--background-color-box-info)
+.bookRow-icon, .listRow-icon {
+  background-image: var(--gnome-icon-address-book-symbolic) !important;
+  stroke: none;
+  fill: var(--gnome-toolbar-icon-fill) !important;
+}
+var(--icon-kebab)*/

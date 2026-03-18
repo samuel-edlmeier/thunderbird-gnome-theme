@@ -96,3 +96,10 @@ dialog#handling {
 .dialog-button-box button[dlgtype="cancel"]:not(#hack) {
 	border-left: 0 !important;
 }
+
+/* New add mail account wizard */
+.account-hub-dialog {
+  &::after {
+    --hub-blur-radius: none !important;
+  }
+}
