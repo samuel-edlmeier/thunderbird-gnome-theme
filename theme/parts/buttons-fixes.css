@@ -146,7 +146,7 @@ toolbarbutton#button-saveandclose:hover:not([disabled="true"]),
 #setupFeeds:hover:not([disabled="true"]),
 #setupNewsgroups:hover:not([disabled="true"]),
 #importButton:hover:not([disabled="true"]){
-  filter: brightness(1.1) !important;; 
+  filter: brightness(110%) !important;; 
 }
 
 button#restoreDefault:hover:not([disabled="true"]), 
@@ -161,7 +161,7 @@ button#donebutton:active:not([disabled="true"]),
 #importButton:active:not([disabled="true"]),
 toolbarbutton#button-saveandclose:active:not([disabled="true"]),
 #button-send:active:not([disabled="true"]) {
-  filter: brightness(0.8) !important;
+  filter: brightness(80%) !important;
 }
 
 toolbarbutton#button-saveandclose .toolbarbutton-icon,

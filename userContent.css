@@ -1,5 +1,7 @@
 @import "theme/colors/light.css";
 @import "theme/colors/dark.css";
+@import "theme/icons/icons.css";
+@import "theme/parts/icons-xul.css";
 
 /* multi-message thread styling */
 #headingWrapper,
@@ -54,7 +56,9 @@ span#summarySubtitle {
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 
+
 /* verified */
+menulist#abPopup,
 html#MailPreferences menulist {
   border-radius: 6px !important;
   height: 34px !important;
@@ -100,35 +104,70 @@ button#booksPaneCreateContact {
   min-height: 34px !important;
   max-height: 34px !important;
   min-width: 140px !important;
-  background-size: 24px 24px !important;
-  background-position: 9px 6px !important;
+  --icon-size: 16px !important;
+  background-size: var(--icon-size) !important;
+  background-position: var(--button-padding) !important;
   border: none !important;
   font-weight: 700 !important;
   font-size: 15px !important;
-  --icon-size: 24px !important;
   padding-inline-start: calc(9px * 1.5 + 16) !important;
   padding-inline-end: calc(var(--button-padding) * 2) !important; 
-  min-block-size: 24px;
   outline: 0 !important;
   -moz-box-align: center !important;
 }
+
+#accounttree {
+  & li {
+    & .icon {
+      fill: var(--icon-color) !important;
+      stroke: none !important;
+    }
+  }
+}
+
 
 button#detailsDeleteButton /* verified, Delete Contact */ { 
   color: var(--gnome-palette-light-1) !important;
   background-color: var(--vcard-delete-button-color) !important
 }
 
+hbox.dialog-button-box button[dlgtype="accept"]:active,
+html#MailPreferences button#qrExportStart.end:not(#hack):active,
+button#saveEditButton.primary:active:not([disabled="true"]),
 button#accountTreeCreateAccount:active:not([disabled="true"]),
-button#booksPaneCreateContact:active:not([disabled="true"]),
+.button.button-primary:not(#hack):active,
 html#MailPreferences button:active:not([disabled="true"]),
 button#detailsDeleteButton:active:not([disabled="true"]) {
-  filter: brightness(0.8) !important;
+  filter: brightness(80%) !important;
 }
+
+hbox.dialog-button-box button[dlgtype="accept"]:hover,
+html#MailPreferences button#qrExportStart.end:not(#hack):hover,
+button#saveEditButton.primary:hover:not([disabled="true"]),
 button#accountTreeCreateAccount:hover:not([disabled="true"]),
-button#booksPaneCreateContact:hover:not([disabled="true"]),
 html#MailPreferences button:hover:not([disabled="true"]),
+.button.button-primary:not(#hack):hover,
 button#detailsDeleteButton:hover:not([disabled="true"]){
-  filter: brightness(1.1) !important;
+  filter: brightness(110%) !important;
+}
+/*
+button[type="submit"]:enabled:hover, html|button.primary:enabled:hover, xul|button[default]:not([disabled="true"]):hover, xul|button.primary:not([disabled="true"]):hover {
+  background-color: none !important;
+  filter: brightness(110%) !important;
+}
+*/
+/* Opaque buttons hover */
+hbox.dialog-button-box button[dlgtype="accept"]:hover,
+html#MailPreferences button#qrExportStart.end:not(#hack):hover,
+.button.button-primary:not(#hack):hover,
+button#saveEditButton.primary:not(#hack):hover {
+	background-color: var(--gnome-button-suggested-action-background) !important;
+}
+
+.vcard-year-month-day-container {
+  & select:not([size], [multiple]), & input[type="number"] {
+    background-color: var(--button-background-color) !important;
+  }
 }
 
 form#editContactForm select,
@@ -303,12 +342,32 @@ hr#booksSplitter {
 	--splitter-occupy-size: 0px !important;
 }
 
+/* check icons on menus */
+
+menuitem :is([type="checkbox"]),
+menupopup#menupopup-column-picker,
+menupopup#bookContext, 
+menupopup#sortContext {
+  & > :is(menu, menuitem) {
+    &[checked="true"], &[selected="true"] {
+      stroke: none !important;
+    }
+  }
+}
+
+/* ... icon in themes and addon dialog */
+div.addon-name-container button.more-options-button {
+  background-image: url("chrome://global/skin/icons/more.svg") !important;
+}
+
 /* Entries */
+dialog#ablistWindow input,
 form input:not([type="checkbox"]) {
 	height: 34px !important;
 	max-height: 34px !important;
 }
 
+dialog#ablistWindow input,
 form input:not([type="checkbox"]),
 form#editContactForm textarea {
 	-moz-appearance: none !important;
@@ -357,3 +416,60 @@ var(--background-color-box-info)
   fill: var(--gnome-toolbar-icon-fill) !important;
 }
 var(--icon-kebab)*/
+
+#cardsPane slot[name="placeholders"] {
+  & div::before {
+    content: "" !important;
+    display: block !important;
+    block-size: 64px !important;
+    margin-block-end: 9px !important;
+    background-position: center top !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    -moz-context-properties: fill, stroke, fill-opacity !important;
+    fill: color-mix(in srgb, currentColor 20%, transparent) !important;
+    stroke: currentColor !important;
+    fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
+  }
+}
+
+#placeholderNoSearchResults {
+  fill-opacity: 1 !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+div#cardsPane tree-view#cards {
+  background-color: inherit !important;
+}
+
+.button {
+	fill: var(--gnome-toolbar-icon-fill) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}
+
+div#booksPane button#booksPaneCreateBook.button.button-flat.icon-button.icon-only,
+div#booksPane button#booksPaneCreateList.button.button-flat.icon-button.icon-only
+{
+  fill: transparent !important;
+  stroke: currentColor !important;
+  -moz-context-properties: fill, fill-opacity !important;
+}
+
+#books {
+  & .bookRow-container, & .listRow-container {
+    -moz-context-properties: none !important;
+    fill: none !important;
+    stroke: none !important
+  }
+}
+form#editContactForm .button.icon-button {
+  fill: var(--gnome-palette-light-1) !important;
+}
+
+.add-property-button {
+  &::before {
+    fill: var(--gnome-palette-light-1) !important; 
+  }
+}
