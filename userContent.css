@@ -56,23 +56,16 @@ span#summarySubtitle {
   background: color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
 }
 
-
 /* verified */
 menulist#abPopup,
 html#MailPreferences menulist {
-  border-radius: 6px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
-  min-width: 34px !important;
-  border: none !important;
-  font-size: 15px !important;
   font-weight: 400 !important;
-  -moz-box-align: center !important;
-  overflow: hidden !important;
 }
 
 /* verified */
+menulist#addContactBookList,
+menulist#abPopup,
+html#MailPreferences menulist,
 discovery-pane button,
 hbox button,
 button#remoteContentExceptions,
@@ -115,7 +108,16 @@ button#booksPaneCreateContact {
   outline: 0 !important;
   -moz-box-align: center !important;
 }
+/* set default color for colored buttons */
+hbox.dialog-button-box button[dlgtype="accept"],
+button#saveEditButton,
+button#booksPaneCreateContact {
+  background-color: var(--gnome-button-suggested-action-background) !important; 
+}
 
+button#deleteAccount {
+  --icon-trash: url("icons/user-trash-symbolic.svg") !important; 
+}
 #accounttree {
   & li {
     & .icon {
@@ -124,7 +126,6 @@ button#booksPaneCreateContact {
     }
   }
 }
-
 
 button#detailsDeleteButton /* verified, Delete Contact */ { 
   color: var(--gnome-palette-light-1) !important;
@@ -150,13 +151,7 @@ html#MailPreferences button:hover:not([disabled="true"]),
 button#detailsDeleteButton:hover:not([disabled="true"]){
   filter: brightness(110%) !important;
 }
-/*
-button[type="submit"]:enabled:hover, html|button.primary:enabled:hover, xul|button[default]:not([disabled="true"]):hover, xul|button.primary:not([disabled="true"]):hover {
-  background-color: none !important;
-  filter: brightness(110%) !important;
-}
-*/
-/* Opaque buttons hover */
+
 hbox.dialog-button-box button[dlgtype="accept"]:hover,
 html#MailPreferences button#qrExportStart.end:not(#hack):hover,
 .button.button-primary:not(#hack):hover,
@@ -184,8 +179,7 @@ html#CustomizeToolbarWindow button {
 	min-width: 34px !important;
 }
 
-/* verified Settings Account Manager */
-
+/* Settings Account Manager */
 hbox#label-box label#label {
   font-weight: 700 !important;
 }
@@ -210,22 +204,17 @@ tree-view#cards tr.card-layout {
 		grid-template-columns: 1fr !important;
 		min-height: 60px !important;
 
-
-
 		/* Remove selected indicator */
 		&::before {
 			content: none !important;
 		}
 	}
-
-  	/* Hover */
 	&:hover .card-container {
 		box-shadow: none !important;
 	}
 	&:not(.selected):hover .card-container {
 		background: var(--gnome-hover-color) !important;
 	}
-	/* Active */
 	&.selected .card-container {
 		background: var(--gnome-selected-color) !important;
 	}
@@ -235,6 +224,39 @@ tree-view#cards tr.card-layout {
  --sidebar-background-color: var(--gnome-sidebar-background) !important;
  --sidebar-background: var(--sidebar-background-color) !important;
 }
+
+/* Contact Details */
+#detailsPane {
+  background: var(--gnome-window-background) !important;
+}
+
+#detailsBody {
+  & section:not([class="button-block"]) {
+	  background: var(--gnome-card-background) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+  }
+  & section:is([class="button-block"]) {
+    background: var(--gnome-window-background) !important;
+  }
+  & section {
+	  border: 0px !important;
+  }
+}
+
+div#detailsPane div#detailsBody ul.entry-list li.entry-item span.entry-type {
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  opacity: 0.5 !important;
+}
+
+div#detailsPane div#detailsBody span.entry-value a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* End Contact Details */
 
 /* Contacts Popups */
 menupopup#bookContext, 
@@ -253,7 +275,7 @@ menupopup#sortContext,
 	--arrowpanel-background: var(--gnome-menu-background) !important;
 	--arrowpanel-border-radius: 12px !important;
 }
-/*html menupopup#bookContext menuitem#bookContextProperties*/
+
 menupopup#bookContext, 
 menupopup#cardContext,
 menupopup#sortContext {
@@ -322,14 +344,12 @@ div#booksPane div.bookRow-container.container {
   	&::before {
 			content: none !important;
 		}
-  	/* Hover */
     &:hover {
       box-shadow: none !important;
     }
     &:not(.selected):hover {
       background: var(--gnome-hover-color) !important;
     }
-    /* Active */
     &.selected {
       background: var(--gnome-selected-color) !important;
     }
@@ -338,12 +358,11 @@ div#booksPane div.bookRow-container.container {
     }
 }
 
-hr#booksSplitter {
+hr#booksSplitter, hr#sharedSplitter {
 	--splitter-occupy-size: 0px !important;
 }
 
 /* check icons on menus */
-
 menuitem :is([type="checkbox"]),
 menupopup#menupopup-column-picker,
 menupopup#bookContext, 
@@ -351,6 +370,7 @@ menupopup#sortContext {
   & > :is(menu, menuitem) {
     &[checked="true"], &[selected="true"] {
       stroke: none !important;
+      fill: var(--gnome-toolbar-color) !important;
     }
   }
 }
@@ -397,25 +417,16 @@ form input {
     inline-size: 48px !important;
   }
 }
+/* end entries */
 
 #cardsPane {
   background-color: var(--sidebar-background) !important;
 }
 
-div#detailsPane div#detailsBody {
-  & section {
-    border:0px !important;
-    background-color: inherit !important;
-  }
+/* no search results */
+#placeholderNoSearchResults::before {
+    background-image: var(--icon-contact) !important;
 }
-/*
-var(--background-color-box-info)
-.bookRow-icon, .listRow-icon {
-  background-image: var(--gnome-icon-address-book-symbolic) !important;
-  stroke: none;
-  fill: var(--gnome-toolbar-icon-fill) !important;
-}
-var(--icon-kebab)*/
 
 #cardsPane slot[name="placeholders"] {
   & div::before {
@@ -433,37 +444,45 @@ var(--icon-kebab)*/
   }
 }
 
+slot[name="placeholders"] {
+  inset: 50% 0 auto !important;
+  opacity: 1 !important;
+  transform: translateY(-50%);
+}
+
 #placeholderNoSearchResults {
   fill-opacity: 1 !important;
   font-size: 20px !important;
   font-weight: 800 !important;
   text-shadow: none !important;
 }
+/* no search results end */
 
 div#cardsPane tree-view#cards {
   background-color: inherit !important;
 }
 
+/* Buttons */
 .button {
 	fill: var(--gnome-toolbar-icon-fill) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 }
 
 div#booksPane button#booksPaneCreateBook.button.button-flat.icon-button.icon-only,
-div#booksPane button#booksPaneCreateList.button.button-flat.icon-button.icon-only
-{
-  fill: transparent !important;
-  stroke: currentColor !important;
-  -moz-context-properties: fill, fill-opacity !important;
+div#booksPane button#booksPaneCreateList.button.button-flat.icon-button.icon-only {
+  fill: var(--gnome-toolbar-icon-fill) !important;
+  stroke: none !important;
+  fill-opacity: 0.6 !important;
 }
 
 #books {
   & .bookRow-container, & .listRow-container {
-    -moz-context-properties: none !important;
-    fill: none !important;
+    /*-moz-context-properties: none !important;*/
+    fill: var(--gnome-toolbar-icon-fill) !important;
     stroke: none !important
   }
 }
+
 form#editContactForm .button.icon-button {
   fill: var(--gnome-palette-light-1) !important;
 }
