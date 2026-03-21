@@ -67,15 +67,13 @@ menulist#addContactBookList,
 menulist#abPopup,
 html#MailPreferences menulist,
 discovery-pane button,
-hbox button,
 button#remoteContentExceptions,
 article#viewContact button,
 vbox#containerBox select,
 div#booksPane button, /* import, up, down*/
 addon-card button, /* settings */
 addon-list button, /* settings */
-form#editContactForm div#detailsFooter.button-block button,
-html#MailPreferences button {
+form#editContactForm div#detailsFooter.button-block button {
   border-radius: 6px !important;
   height: 34px !important;
   min-height: 34px !important;
@@ -83,9 +81,25 @@ html#MailPreferences button {
   min-width: 34px !important;
   border: none !important;
   font-size: 15px !important;
-  font-weight: 700 !important;
+  /*font-weight: 700 !important;*/
   -moz-box-align: center !important;
   overflow: hidden !important;
+}
+
+hbox button,
+html#MailPreferences button,
+form#editContactForm select,
+html#messengerWindow select,
+html#calendar-summary-dialog button,
+html#CustomizeToolbarWindow button {
+	border-radius: 6px !important;
+  border: 0 !important;
+  font-weight: 700 !important;
+  padding: 2px 15px !important;
+  height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
 }
 
 /* verified, buttons with icons */
@@ -163,20 +177,6 @@ button#saveEditButton.primary:not(#hack):hover {
   & select:not([size], [multiple]), & input[type="number"] {
     background-color: var(--button-background-color) !important;
   }
-}
-
-form#editContactForm select,
-html#messengerWindow select,
-html#calendar-summary-dialog button,
-html#CustomizeToolbarWindow button {
-	border-radius: 6px !important;
-  border: 0 !important;
-  font-weight: 700 !important;
-  padding: 2px 15px !important;
-  height: 34px !important;
-	max-height: 34px !important;
-	min-height: 34px !important;
-	min-width: 34px !important;
 }
 
 /* Settings Account Manager */
@@ -387,9 +387,12 @@ form input:not([type="checkbox"]) {
 	max-height: 34px !important;
 }
 
+html#MailPreferences body stack#preferences-stack input:not([type="checkbox"]),
+form#editContactForm div.vcard-adr-inputs textarea#vcard-id-17,
 dialog#ablistWindow input,
 form input:not([type="checkbox"]),
-form#editContactForm textarea {
+form#editContactForm textarea,
+vcard-edit textarea {
 	-moz-appearance: none !important;
 	background: var(--gnome-entry-background) !important;
 	outline: 2px solid transparent !important;
@@ -401,6 +404,8 @@ form#editContactForm textarea {
 	box-sizing: border-box;
 }
 
+html#MailPreferences body stack#preferences-stack input:focus,
+dialog#ablistWindow input:focus,
 input:not([type="checkbox"]):focus {
 	outline: 2px solid var(--selected-item-color) !important;
 	outline-offset: -2px !important;
@@ -462,17 +467,31 @@ div#cardsPane tree-view#cards {
   background-color: inherit !important;
 }
 
-/* Buttons */
-.button {
+/* Icons */
+button#buttonABSdownload.button.button-flat.icon-button {
+  background-image: var(--icon-download) !important;
+}
+
+button#buttonABSupload.button.button-flat.icon-button {
+  background-image: var(--icon-upload) !important;
+}
+/* Buttons with Icons */
+#preferences-stack input#searchInput[type="search"],
+#qrExportSecurityLegend::before,
+#qrExportAccountsLegend::before,
+.button#search-button,
+div#detailsPane .button,
+div#cardsPane .button,
+div#booksPane .button {
 	fill: var(--gnome-toolbar-icon-fill) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 }
 
-div#booksPane button#booksPaneCreateBook.button.button-flat.icon-button.icon-only,
 div#booksPane button#booksPaneCreateList.button.button-flat.icon-button.icon-only {
   fill: var(--gnome-toolbar-icon-fill) !important;
   stroke: none !important;
   fill-opacity: 0.6 !important;
+  background-image: var(--gnome-icon-contact-new-symbolic) !important;
 }
 
 #books {

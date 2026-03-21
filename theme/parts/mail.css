@@ -280,6 +280,7 @@ hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box { margin
 }
 
 /* Overwrite text labels to ensure there is enough space */
+label#identityLabel::before {content: "From" !important;}
 label#toAddrLabel::before {content: "To" !important;}
 label#replyAddrLabel::before {content: "RE" !important;}
 label#ccAddrLabel::before {content: "CC" !important;}

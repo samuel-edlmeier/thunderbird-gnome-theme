@@ -91,14 +91,18 @@
 	--icon-redirect-col: var(--gnome-icon-network-transmit-receive-symbolic) !important;
 	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
 	--icon-download: var(--gnome-icon-folder-download-symbolic) !important;
+	--icon-upload: var(--gnome-icon-folder-upload-symbolic) !important;
 	--icon-lock: var(--gnome-icon-padlock-symbolic) !important;
 	--icon-lock-disabled: var(--gnome-icon-padlock-insecure-symbolic) !important;
 	--icon-spelling: var(--gnome-icon-tools-check-spelling-symbolic) !important;
 	--icon-new-chat:var(--gnome-icon-chat-bubbles-text-symbolic) !important;
+	--icon-new-contact:var(--gnome-icon-contact-new-symbolic) !important;
+	--icon-new-address-book:var(--gnome-icon-address-book-new-symbolic) !important;
 	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
 	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
 	--font-size-decrease: var(--gnome-icon-zoom-out-symbolic) !important;
 	--font-size-increase: var(--gnome-icon-zoom-in-symbolic) !important;
+	--icon-import: var(--gnome-icon-insert-object-symbolic) !important;
 }
 
 @media (prefers-color-scheme: light) {
