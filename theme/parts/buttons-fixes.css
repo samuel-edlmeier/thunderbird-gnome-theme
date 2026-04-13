@@ -205,3 +205,12 @@ button#accountTreeCreateAccount,
 button#booksPaneCreateContact {
   background-color: var(--gnome-accent-bg) !important;
 }
+
+/* Accent buttons hover fade */
+#button-send:hover:not([disabled="true"]),
+.button.button-primary:not(#hack):hover {
+  background-color: var(--gnome-accent-bg) !important;
+	filter: brightness(110%) !important;
+	transition: filter .25s, background-color .25s !important;
+}
+
