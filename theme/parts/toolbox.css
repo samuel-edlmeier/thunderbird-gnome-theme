@@ -4,7 +4,7 @@
 
 /* Toolbox colors */
 #compose-toolbox:not([hidden]) {
-	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 65%, transparent) !important;
 }
 
 #navigator-toolbox {
