@@ -7,6 +7,9 @@
 .toolbarbutton-1,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker, 
+toolbarbutton#newButton,
+toolbarbutton#newButton > .toolbarbutton-menu-dropmarker,
+toolbarbutton#newButton > .toolbarbutton-menubutton-dropmarker,
 link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"],
 link[href="chrome://global/content/elements/moz-message-bar.css"] + .container .icon,
 .preview-icon,
@@ -78,7 +81,6 @@ menuitem[type="radio"][checked="true"]
 .textbox-search-sign:-moz-window-inactive,
 .textbox-search-clear:-moz-window-inactive,
 .toolbarbutton-icon:-moz-window-inactive,
-.search-button-icon:-moz-window-inactive,
 .today-pane-cycler:-moz-window-inactive,
 #offline-status:-moz-window-inactive,
 #starMessageButton img,
@@ -88,114 +90,6 @@ menuitem[type="radio"][checked="true"]
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon:-moz-window-inactive,
 :root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
 	fill-opacity: 0.8 !important;
-}
-
-:root {
-	--spaces-icon-mail: var(--gnome-icon-mail-symbolic) !important;
-	--spaces-icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
-	--spaces-icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
-	--spaces-icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
-	--spaces-icon-chat: var(--gnome-icon-chat-bubbles-text-symbolic) !important;
-	--spaces-icon-overflow: var(--gnome-icon-last-symbolic) !important;
-	--spaces-icon-settings: var(--gnome-icon-settings-symbolic) !important;
-	--spaces-icon-collapse: var(--gnome-icon-first-symbolic) !important;
-	--icon-collapse: var(--gnome-icon-first-symbolic) !important;
-	--icon-spaces-menu: var(--gnome-icon-toggle-sidebar-symbolic) !important;
-	--icon-app-menu: var(--gnome-icon-open-menu-symbolic) !important;
-	--icon-folder: var(--gnome-icon-folder-symbolic) !important;
-	--icon-inbox: var(--gnome-icon-inbox-symbolic) !important;
-	--icon-draft: var(--gnome-icon-rich-text-symbolic) !important;
-	--icon-template: var(--gnome-icon-folder-templates-symbolic) !important;
-	--icon-sent: var(--gnome-icon-outbox-symbolic) !important;
-	--icon-archive: var(--gnome-icon-mail-archive-symbolic) !important;
-	--icon-trash: var(--gnome-icon-user-trash-symbolic) !important;
-	--icon-trash-sm: var(--gnome-icon-user-trash-symbolic) !important;
-	--icon-spam: var(--gnome-icon-junk-alt-symbolic) !important;
-	--icon-spam-sm: var(--gnome-icon-junk-alt-symbolic) !important;
-	--icon-mail-secure: var(--gnome-icon-mail-secure-symbolic) !important;
-	--icon-tag: var(--gnome-icon-tag-symbolic) !important;
-	--icon-tag-sm: var(--gnome-icon-tag-symbolic) !important;
-	--icon-add: var(--gnome-icon-list-add-symbolic) !important;
-	--icon-kebab: var(--gnome-icon-view-more-symbolic) !important;
-	--icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
-	--icon-cloud-download: var(--gnome-icon-update-symbolic) !important;
-	--icon-filter: var(--gnome-icon-controls-big-symbolic) !important;
-	--icon-display-options: var(--gnome-icon-list-large-symbolic) !important;
-	--icon-pin: var(--gnome-icon-pin-symbolic) !important;
-	--icon-unread: var(--gnome-icon-mail-unread-symbolic) !important;
-	--icon-unread-sm: var(--gnome-icon-mail-unread-symbolic) !important;
-	--icon-star: var(--gnome-icon-starred-symbolic) !important;
-	--icon-star-sm: var(--gnome-icon-starred-symbolic) !important;
-	--icon-address-book: var(--gnome-icon-address-book-symbolic) !important;
-	--icon-attachment: var(--gnome-icon-mail-attachment-symbolic) !important;
-	--icon-attachment-sm: var(--gnome-icon-mail-attachment-symbolic) !important;
-	--icon-mail: var(--gnome-icon-mail-symbolic) !important;
-	--icon-mail-lg: var(--gnome-icon-mail-symbolic) !important;
-	--icon-new-mail: var(--gnome-icon-mail-message-new-symbolic) !important;
-	--icon-forward: var(--gnome-icon-mail-forward-symbolic) !important;
-	--icon-forward-col: var(--gnome-icon-mail-forward-symbolic) !important;
-	--icon-reply: var(--gnome-icon-mail-reply-sender-symbolic) !important;
-	--icon-reply-all: var(--gnome-icon-mail-reply-all-symbolic) !important;
-	--icon-reply-list: var(--gnome-icon-mail-reply-all-symbolic) !important;
-	--icon-reply-col: var(--gnome-icon-mail-reply-all-symbolic) !important;
-	--icon-replies-xs: var(--gnome-icon-mail-reply-all-symbolic) !important;
-	--icon-calendar: var(--gnome-icon-x-office-calendar-symbolic) !important;
-	--icon-calendar-today: var(--gnome-icon-month-symbolic) !important;
-	--icon-nav-today: var(--gnome-icon-month-symbolic) !important;
-	--icon-new-event: var(--gnome-icon-calendar-new-symbolic) !important;
-	--icon-tasks: var(--gnome-icon-tasks-symbolic) !important;
-	--icon-new-task: var(--gnome-icon-tasks-new-symbolic) !important;
-	--icon-chat: var(--gnome-icon-chat-bubbles-text-symbolic) !important;
-	--icon-rss: var(--gnome-icon-newspaper-symbolic) !important;
-	--icon-sync: var(--gnome-icon-update-symbolic) !important;
-	--icon-nav-back: var(--gnome-icon-go-previous-symbolic) !important;
-	--icon-nav-left: var(--gnome-icon-pan-start-symbolic) !important;
-	--icon-nav-left-sm: var(--gnome-icon-pan-start-symbolic) !important;
-	--icon-nav-forward: var(--gnome-icon-go-next-symbolic) !important;
-	--icon-nav-right: var(--gnome-icon-pan-end-symbolic) !important;
-	--icon-nav-right-sm: var(--gnome-icon-pan-end-symbolic) !important;
-	--icon-nav-up: var(--gnome-icon-go-up-symbolic) !important;
-	--icon-nav-up-sm: var(--gnome-icon-pan-up-symbolic) !important;
-	--icon-nav-down: var(--gnome-icon-go-down-symbolic) !important;
-	--icon-nav-down-sm: var(--gnome-icon-pan-down-symbolic) !important;
-	--icon-close: var(--gnome-icon-process-stop-symbolic) !important;
-	--icon-print: var(--gnome-icon-printer-symbolic) !important;
-	--icon-extension: var(--gnome-icon-application-x-addon-symbolic) !important;
-	--icon-search: var(--gnome-icon-edit-find-symbolic) !important;
-	--icon-eye: var(--gnome-icon-eye-open-negative-filled-symbolic) !important;
-	--icon-hidden: var(--gnome-icon-eye-not-looking-symbolic) !important;
-	--icon-pencil: var(--gnome-icon-edit-symbolic) !important;
-	--icon-online: var(--gnome-icon-network-transmit-receive-symbolic) !important;
-	--icon-offline: var(--gnome-icon-network-offline-symbolic) !important;
-	--icon-settings: var(--gnome-icon-settings-symbolic) !important;
-	--icon-unread-dot: var(--gnome-icon-bullet-symbolic) !important;
-	--icon-new-indicator: var(--gnome-icon-bullet-symbolic) !important;
-	--icon-close: var(--gnome-icon-window-close-symbolic) !important;
-	--icon-check: var(--gnome-icon-select-symbolic) !important;
-	--icon-tentative: var(--gnome-icon-question-symbolic) !important;
-	--icon-photo-ban: var(--gnome-icon-stop-sign-large-symbolic) !important;
-	--icon-column-menu: var(--gnome-icon-columns-symbolic) !important;
-	--icon-redirect: var(--gnome-icon-network-transmit-receive-symbolic) !important;
-	--icon-redirect-col: var(--gnome-icon-network-transmit-receive-symbolic) !important;
-	--icon-file: var(--gnome-icon-rich-text-symbolic) !important;
-	--icon-download: var(--gnome-icon-folder-download-symbolic) !important;
-	--icon-upload: var(--gnome-icon-folder-upload-symbolic) !important;
-	--icon-lock: var(--gnome-icon-padlock-symbolic) !important;
-	--icon-lock-disabled: var(--gnome-icon-padlock-insecure-symbolic) !important;
-	--icon-spelling: var(--gnome-icon-tools-check-spelling-symbolic) !important;
-	--icon-new-chat:var(--gnome-icon-chat-bubbles-text-symbolic) !important;
-	--icon-new-contact:var(--gnome-icon-contact-new-symbolic) !important;
-	--icon-new-address-book:var(--gnome-icon-address-book-new-symbolic) !important;
-	--folder-pane-icon-new: var(--gnome-icon-list-add-symbolic) !important;
-	--folder-pane-icon-more: var(--gnome-icon-view-more-horizontal-symbolic) !important;
-	--font-size-decrease: var(--gnome-icon-zoom-out-symbolic) !important;
-	--font-size-increase: var(--gnome-icon-zoom-in-symbolic) !important;
-}
-
-@media (prefers-color-scheme: light) {
-	.button.button-primary.icon-button:not(#hack) {
-		fill: #fff !important;
-	}
 }
 /* Tinted icons */
 #folderTree .icon {
@@ -484,7 +378,7 @@ button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-cen
 #spellingButton { list-style-image: url("../icons/tools-check-spelling-symbolic.svg") !important; }
 #button-attendees, #button-contacts { list-style-image: url("../icons/address-book-symbolic.svg") !important; }
 #button-save, #button-saveandclose { list-style-image: url("../icons/folder-download-symbolic.svg") !important; }
-#toolbarbutton-menubutton-dropmarker, .toolbarbutton-menubutton-dropmarker { content: url("../icons/pan-down-symbolic.svg") !important; }
+#newButtondropmarker.toolbarbutton-menubutton-dropmarker, #toolbarbutton-menubutton-dropmarker, .toolbarbutton-menubutton-dropmarker { content: url("../icons/pan-down-symbolic.svg") !important; }
 #button-privacy { list-style-image: url("../icons/padlock-symbolic.svg") !important; }
 #button-delete { list-style-image: url("../icons/user-trash-symbolic.svg") !important; }
 & #abContextMenuButton { list-style-image: url("../icons/view-more-symbolic.svg") !important; }
@@ -494,4 +388,3 @@ button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-cen
 #searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
 #composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }
 #filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }
-

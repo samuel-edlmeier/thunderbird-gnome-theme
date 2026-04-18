@@ -243,10 +243,7 @@ slot[name="placeholders"] {
 }
 
 /* Message */
-#messagePane {
-	background: var(--gnome-view-background) !important;
-}
-
+#messagePane,
 #attachmentView,
 #attachmentList {
 	background: var(--gnome-view-background) !important;
@@ -265,13 +262,18 @@ link[href="chrome://global/content/elements/moz-message-bar.css"] + .container {
 	gap: 6px !important;
 	margin: 0 !important;
 	padding: 6px !important;
-	
 	.text-content {
 		font-weight: bold !important;
 	}
 }
 
-hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box { margin-right: 8px !important; }
+hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box { 
+	margin-right: 8px !important;
+ }
+
+#msgSubject {
+	transition: outline 0.3s, outline-offset 0.3s !important;
+}
 
 .address-label-container, #identityLabel-box, #subjectLabel-box {
   width: 40px !important;
@@ -286,7 +288,3 @@ label#replyAddrLabel::before {content: "RE" !important;}
 label#ccAddrLabel::before {content: "CC" !important;}
 label#bccAddrLabel::before {content: "BCC" !important;}
 label#subjectLabel::before, #subjectLabel::before {content: "Sub." !important;}
-
-hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box {
-  margin-right: 8px !important;
-  }

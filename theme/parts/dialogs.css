@@ -103,3 +103,7 @@ dialog#handling {
     --hub-blur-radius: none !important;
   }
 }
+
+html#FilterEditor body dialog {
+	padding: 8px 8px 0 0 !important;
+}

@@ -5,6 +5,7 @@
 
 /* Thunderbird */
 @import "parts/variables.css";
+@import "parts/icons-shared.css";
 @import "parts/icons.css";
 @import "parts/toolbox.css";
 @import "parts/csd.css";

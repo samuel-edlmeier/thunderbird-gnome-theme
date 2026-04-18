@@ -14,13 +14,19 @@ input:not([type="checkbox"], [inputmode="search"], .input-pill),
 	color: var(--gnome-entry-color) !important;
 	height: 34px !important;
 	max-height: 34px !important;
-	margin: 0 !important;
+	margin: 1px !important;
 	padding: 6px 9px !important;
-	box-sizing: border-box;
-	transition: outline 0.3s, outline-offset 0.3s;
+	box-sizing: border-box !important;
+	transition: outline 0.3s, outline-offset 0.3s !important;
 }
+
 .contentTabSecurity[src] + .contentTabUrlInput {
 	padding-inline-start: 28px !important;
+}
+
+.attendee-list-container vbox#attendee-list event-attendee input.plain {
+	height: 21px !important;
+	max-height: 21px !important;
 }
 
 /* Entries focused */
@@ -128,3 +134,22 @@ menulist[editable="true"]:not(#hack) {
 link[href="chrome://global/skin/menulist.css"] ~ input {
 	margin: 0 !important;
 }
+
+richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="true"],
+richlistbox.theme-listbox:focus > richlistitem[current="true"][selected="true"] {
+	outline-color: none important;
+	outline: none !important;
+}
+
+/* fix magnifier position in search fields */
+form button#search-button.button.button-flat.icon-button {
+	padding: 0px 9px 0px 9px !important;
+}
+
+moz-button::part(button),
+input::-moz-search-clear-button {
+	fill: none !important;
+	padding: 4px !important;
+	transform: translateX(-18px) !important; 
+}
+

@@ -188,3 +188,8 @@ menubar > menu {
 #tabs-toolbar, .inline-toolbar, .contentTabToolbar, toolbar, #event-toolbar {
   border-bottom: none !important;
 }
+
+
+#unifiedToolbar toolbarbutton#spacesPinnedButton.button.toolbar-button {
+-moz-context-properties: none !important
+}

@@ -20,11 +20,15 @@
 	justify-content: center !important;
 }
 
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
 	align-items: center !important;
 	justify-content: center !important;
 	padding: 9px 4px !important;;
 }
+
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker::before,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::before,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker::before,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::after {
 	display: none !important;
@@ -214,3 +218,9 @@ button#booksPaneCreateContact {
 	transition: filter .25s, background-color .25s !important;
 }
 
+/* Tasks */
+hbox#other-actions-box vbox#task-actions-toolbox.inline-toolbox hbox#task-actions-toolbar.themeable-brighttext toolbarbutton#task-actions-priority.toolbarbutton-1.message-header-view-button,
+hbox#other-actions-box vbox#task-actions-toolbox.inline-toolbox hbox#task-actions-toolbar.themeable-brighttext toolbarbutton#task-actions-category.toolbarbutton-1.message-header-view-button
+{
+	padding: 2px 24px 2px 9px !important;
+}
