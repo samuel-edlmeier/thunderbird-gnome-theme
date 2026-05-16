@@ -36,10 +36,19 @@ button#booksPaneCreateContact,
 #calendar-status-todaypane-button,
 #filterListGrid #filterActionButtons button,
 #filterListGrid #filterListBox button {
-	appearance: none !important;
+	-moz-appearance: none !important;
+	align-items: center !important;
 	background-color: var(--gnome-button-background) !important;
-	border-radius: 6px !important;
+	border-radius: var(--gnome-button-radius) !important;
 	border: 0 !important;
+	color: var(--gnome-window-color) !important;
+	font: menu !important;
+	font-weight: bold !important;
+	justify-content: center !important;
+	max-height: var(--gnome-button-size) !important;
+	min-height: var(--gnome-button-size) !important;
+	min-width: var(--gnome-button-size) !important;
+	outline: 0 !important;
 	padding: 0 1px !important;
 	height: 34px !important;
 	max-height: 34px !important;
@@ -64,7 +73,7 @@ button#booksPaneCreateContact,
 
 /* Flat Buttons */
 .button.button-flat,
-.button.icon-button:not(.button-group .button),
+.button.icon-button:not(.button-group .button, .button-primary),
 .toolbarbutton-1:not([is="toolbarbutton-menu-button"]),
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
 .toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
@@ -90,8 +99,56 @@ button.calview-toggle-item,
 #offline-status,
 #spacesToolbarReveal,
 #calendar-status-todaypane-button {
-	background-color: transparent !important;
-	transition: background .3s;
+	--gnome-button-background: transparent !important;
+	transition: background var(--gnome-animation-time);
+
+	&:not([disabled="true"]):not(#hack) {
+		/* Hover buttons */
+		&:hover {
+			background-color: var(--gnome-hover-color) !important;
+		}
+		/* Active buttons */
+		&:active {
+			background-color: var(--gnome-active-color) !important;
+		}
+		/* Checked buttons */
+		&[selected], &[checked], &[open] {
+			background-color: var(--gnome-selected-color) !important;
+			
+			&:hover {
+				background-color: var(--gnome-selected-hover-color) !important;
+			}
+			&:active {
+				background-color: var(--gnome-selected-active-color) !important;
+			}
+		}
+	}
+}
+
+/* Buttons with suggested action */
+.button.button-primary {
+	--gnome-button-background: var(--gnome-button-suggested-background) !important;
+	--gnome-button-hover-background: var(--gnome-button-suggested-background) !important;
+	--gnome-button-active-background: var(--gnome-button-suggested-background) !important;
+	color: white !important;
+
+	&:not([disabled="true"]) {
+		&:hover {
+			filter: brightness(110%);
+		}
+		&:active {
+			filter: brightness(120%);
+		}
+	}
+}
+
+/* Buttons with destructive action */
+#editBookmarkPanelRemoveButton,
+#PanelUI-panic-view-button {
+	--gnome-button-background: var(--gnome-button-destructive-background) !important;
+	--gnome-button-hover-background: var(--gnome-button-destructive-hover-background) !important;
+	--gnome-button-active-background: var(--gnome-button-destructive-active-background) !important;
+	color: var(--gnome-destructive) !important;
 }
 
 /* Buttons with margins */
@@ -127,7 +184,6 @@ button.calview-toggle-item,
 #filterListGrid #filterActionButtons button,
 #filterListGrid #filterListBox button {
 	padding: 2px 15px !important;
-	font-weight: bold !important;
 }
 .text-only #unifiedToolbar .unified-toolbar-button {
 	text-align: center !important;
@@ -409,7 +465,6 @@ toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]):hover > .toolbarbut
 	min-height: 22px !important;
 	min-width: 22px !important;
 }
-
 /* Fix TB Landing Page */
 #filterButton::before, #composeButton::before, #searchButton::before, #readButton::before   {
 	fill: var(--gnome-toolbar-icon-fill) !important;
