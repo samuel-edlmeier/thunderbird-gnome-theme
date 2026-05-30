@@ -19,6 +19,7 @@
 @import "parts/entries.css";
 @import "parts/controls.css";
 
+@import "parts/modifications.css";
 @import "parts/popups.css";
 @import "parts/popups-contents.css";
 @import "parts/dialogs.css";
