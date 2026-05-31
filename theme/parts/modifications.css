@@ -532,13 +532,13 @@ notification-message[style*="opacity: 0"] {
 notification-message button.notification-button {
   -moz-appearance: none !important;
   appearance: none !important;
-  
-  border-radius: 6px !important;
-  padding: 4px 14px !important;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 14px;
   margin-left: 8px !important;
   font-weight: 700 !important;
   min-height: 30px !important;
-  
   transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
