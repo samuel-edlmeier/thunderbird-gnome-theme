@@ -3,7 +3,7 @@
   --adwaita-input-border-hover: color-mix(in srgb, FieldText 40%, transparent);
   --adwaita-focus-ring-color: AccentColor;
   --adwaita-focus-ring-shadow: color-mix(in srgb, AccentColor 30%, transparent);
-  --adwaita-border-radius: 6px;
+  --adwaita-border-radius: var(--gnome-button-radius);
   --adwaita-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -560,4 +560,28 @@ menubar > menu {
 
 html#CustomizeToolbarWindow menupopup#modelistpopup.in-menulist {
 	min-height: 200px !important;
+}
+
+
+/*
+****** Folder Pane ******
+*/
+
+#folderPane {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/*
+****** Title Bar ******
+*/
+#titlebar {
+  border-bottom: none !important;
+}
+
+/*
+****** Calendar, Tasks Button Side Panel
+*/
+#primaryButtonSidePanel {
+  background-color: var(--gnome-sidebar-background) !important;
 }

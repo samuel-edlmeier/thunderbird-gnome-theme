@@ -240,6 +240,8 @@ tree-view#cards tr.card-layout.selected .card-container {
 #booksPane {
  --sidebar-background-color: var(--gnome-sidebar-background) !important;
  --sidebar-background: var(--sidebar-background-color) !important;
+ padding-left: 6px;
+ padding-right: 6px;
 }
 
 /* Contact Details */
@@ -605,5 +607,15 @@ radio > .radio-check[selected] {
   fill: white !important;
   -moz-context-properties: fill;
 }
+
+/*
+****** Books Pane (Contacts) ******
+*/
+
+#folderPane {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 
 }
