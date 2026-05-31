@@ -11,7 +11,7 @@
   --adwaita-input-border-hover: color-mix(in srgb, FieldText 40%, transparent);
   --adwaita-focus-ring-color: AccentColor;
   --adwaita-focus-ring-shadow: color-mix(in srgb, AccentColor 30%, transparent);
-  --adwaita-border-radius: 6px;
+  --adwaita-border-radius: 9px;
   --adwaita-transition: border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                         box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -220,7 +220,7 @@ tree-view#cards tr.card-layout .card-container {
   --thread-card-content-gap: 6px !important;
   background: none !important;
   border: 0 !important;
-  border-radius: 6px !important;
+  border-radius: 12px !important;
   grid-template-columns: 1fr !important;
   min-height: 60px !important;
 }
@@ -252,7 +252,7 @@ tree-view#cards tr.card-layout.selected .card-container {
 #detailsBody section:not([class="button-block"]) {
   background: var(--gnome-card-background) !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
   border: 0px !important;
 }
 
@@ -358,7 +358,7 @@ menuseparator::before {
 div#booksPane div.bookRow-container.container {
   background: none !important;
   border: 0 !important;
-  border-radius: 6px !important;
+  border-radius: 12px !important;
 }
 div#booksPane div.bookRow-container.container::before {
   content: none !important;

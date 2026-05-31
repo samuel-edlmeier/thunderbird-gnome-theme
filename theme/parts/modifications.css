@@ -493,43 +493,69 @@ button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-cen
 /* 
 ****** Infobar modifications and fixes ******
 */
-
-/* Fix: Hide closed notification-message */
-notification-message[style*="opacity: 0"] {
-  display: none !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-}
-#mail-notification-top:has(notification-message[style*="opacity: 0"]),
-.notificationbox-stack:has(notification-message[style*="opacity: 0"]) {
-  display: none !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-}
-/* end fix */
-
 notification-message[message-bar-type="infobar"] {
   -moz-appearance: none !important;
   appearance: none !important;
   background-color: var(--gnome-window-background) !important;
-  color: var(--gnome-window-color) !important;
-  border: 1px solid var(--gnome-border-color) !important;
-  border-radius: 8px !important;
-  margin: 8px 12px !important; /* Abstand zu den Rändern */
+  border-radius: 12px !important;
+  margin: 8px 12px !important; 
   padding: 6px 10px !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden !important;
+  max-height: 150px !important; 
+  transition: opacity 0.2s ease-out, 
+              max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, 
+              margin 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, 
+              padding 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s,
+              border-width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s !important;
+}
+
+/* Fade-Out  */
+notification-message[style*="opacity: 0"] {
+  opacity: 0 !important;
+  max-height: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-width: 0 !important;
+}
+
+#mail-notification-top,
+.notificationbox-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+notification-message button.notification-button {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  
+  border-radius: 6px !important;
+  padding: 4px 14px !important;
+  margin-left: 8px !important;
+  font-weight: 700 !important;
+  min-height: 30px !important;
+  
+  transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+notification-message .close-icon,
+notification-message button.close {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  border-radius: 50% !important;
+  padding: 6px !important;
+  width: 28px !important;
+  height: 28px !important;
+  transition: background-color 0.2s !important;
 }
 
 link[href="chrome://global/content/elements/moz-message-bar.css"] + .container,
 #mail-notification-top div.container {
-  background-color: unset !important;
+  background-color: var(--gnome-window-background) !important;
 }
 
 /* 
