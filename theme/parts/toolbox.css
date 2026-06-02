@@ -3,10 +3,6 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Toolbox colors */
-#compose-toolbox:not([hidden]) {
-	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
-}
-
 #titlebar {
 	border-bottom: 1px solid var(--gnome-headerbar-shade-color) !important;
 }

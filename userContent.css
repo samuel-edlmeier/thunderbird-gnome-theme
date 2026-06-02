@@ -141,10 +141,11 @@ button#booksPaneCreateContact {
   padding-inline-end: calc(var(--button-padding) * 2) !important; 
   outline: 0 !important;
   -moz-box-align: center !important;
+  border-radius: var(--adwaita-border-radius) !important;
 }
 
 button#deleteAccount {
-  --icon-trash: url("theme/icons/user-trash-symbolic.svg") !important; 
+  --icon-trash: url("theme/icons/composer/user-trash-symbolic.svg") !important; 
   list-style-image: var(--icon-trash) !important;
   fill: var(--gnome-palette-light-1) !important;
   stroke: none !important;
@@ -184,7 +185,6 @@ button.primary:enabled:hover,
   filter: brightness(110%) !important;
   transition: filter .25s, background-color .25s !important;
 }
-
 
 /* 
 ****** Layout & Structure ******
@@ -577,7 +577,7 @@ checkbox:not(.treenode-checkbox) > .checkbox-check:not([checked]):hover {
 }
 checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
   background-color: var(--gnome-accent-bg) !important;
-  background-image: var(--gnome-icon-select-symbolic) !important;
+  background-image: url("theme/icons/custom/select-fixed-symbolic.svg") !important;
   background-size: 14px !important;
   background-repeat: no-repeat;
   background-position: center;
@@ -603,7 +603,7 @@ radio > .radio-check:not([selected]):hover {
 }
 radio > .radio-check[selected] {
   background-color: var(--gnome-accent-bg) !important;
-  list-style-image: var(--gnome-icon-bullet-symbolic) !important;
+  list-style-image: url("theme/icons/custom/bullet-fixed-symbolic.svg") !important;
   fill: white !important;
   -moz-context-properties: fill;
 }

@@ -7,6 +7,19 @@
   --adwaita-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+
+/*
+******** Controls ********
+*/
+
+checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
+	background-image: url("../icons/custom/select-fixed-symbolic.svg") !important;
+}
+
+radio > .radio-check[selected] {
+	list-style-image: url("../icons/custom/bullet-fixed-symbolic.svg") !important;
+}
+
 /* 
 ******** Entries ********
 */
@@ -134,6 +147,13 @@ html#msgcomposeWindow toolbox#compose-toolbox.toolbox-top toolbar#composeToolbar
       background-color: var(--gnome-accent-bg) !important;
     }
   }
+}
+
+html#calendar-event-window dialog#calendar-task-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#calendar-event-window dialog#calendar-event-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#msgcomposeWindow toolbox#compose-toolbox.toolbox-top toolbar#composeToolbar2.chromeclass-toolbar.themeable-full toolbarbutton#button-send.toolbarbutton-1
+{
+  background-color: var(--gnome-accent-bg) !important;
 }
 
 /* Hover flat buttons */
@@ -358,6 +378,7 @@ button#setupFeeds,
 button#setupNewsgroups,
 button#importButton {
   color: var(--gnome-palette-light-1) !important;
+  border-radius: var(--adwaita-border-radius) !important;
 }
 
 button#restoreDefault:active:not([disabled="true"]), 
@@ -391,7 +412,7 @@ toolbarbutton#button-saveandclose:active:not([disabled="true"]),
 }
 
 toolbarbutton#button-saveandclose .toolbarbutton-icon,
-toolbarbutton#button-saveandclose .toolbarbutton-text 
+toolbarbutton#button-saveandclose .toolbarbutton-text,
 #button-send .toolbarbutton-icon,
 #button-send .toolbarbutton-text {
   fill: var(--gnome-palette-light-1) !important;
@@ -588,6 +609,14 @@ html#CustomizeToolbarWindow menupopup#modelistpopup.in-menulist {
 	min-height: 200px !important;
 }
 
+
+/* 
+****** Toolbox ******
+*/
+
+#compose-toolbox:not([hidden]) {
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+}
 
 /*
 ****** Folder Pane ******
