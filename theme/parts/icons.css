@@ -847,7 +847,7 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 }
 
 /* Fix TB Landing Page */
-#readButton::before { background-image: url("../icons/inbox-symbolic.svg") !important; }
-#searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
-#composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }
+#readButton::before { background-image: url("../icons/custom/inbox-symbolic.svg") !important; }
+#searchButton::before { background-image: url("../icons/custom/edit-find-symbolic.svg") !important; }
+#composeButton::before { background-image: url("../icons/custom/mail-message-new-symbolic.svg") !important; }
 #filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }

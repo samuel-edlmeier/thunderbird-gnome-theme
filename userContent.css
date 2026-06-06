@@ -526,7 +526,6 @@ div#booksPane .button {
 div#booksPane button#booksPaneCreateList.button.button-flat.icon-button.icon-only {
   fill: var(--gnome-toolbar-icon-fill) !important;
   stroke: none !important;
-  fill-opacity: 0.6 !important;
   background-image: var(--gnome-icon-contact-new-symbolic) !important;
 }
 
