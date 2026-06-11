@@ -14,6 +14,7 @@
 
 #messageHeader {
 	background: var(--gnome-window-background) !important;
+	padding: var(--gnome-toolbar-padding) !important;
 }
 
 #attachmentBar,
@@ -63,7 +64,7 @@
 /* Filters */
 .list-header-bar:not([hidden]), #quick-filter-bar {
 	background: var(--gnome-secondary-sidebar-background) !important;
-	border-bottom: 1px solid var(--gnome-sidebar-shade-color) !important;
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important
 }
 #quick-filter-bar-filter-text-bar {
 	padding-top: 12px !important;
@@ -227,7 +228,6 @@ slot[name="placeholders"] {
 #messagePane,
 #attachmentBar {
 	background: var(--gnome-toolbar-background) !important;
-	padding: var(--gnome-toolbar-padding) !important;
 }
 
 #attachmentView,
@@ -253,3 +253,4 @@ link[href="chrome://global/content/elements/moz-message-bar.css"] + .container {
 		font-weight: bold !important;
 	}
 }
+
