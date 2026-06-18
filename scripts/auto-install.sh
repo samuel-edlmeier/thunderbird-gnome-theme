@@ -5,7 +5,7 @@ themeNames=("maia" "maia")
 
 installationPaths=(
     ~/.thunderbird
-    ~/.var/app/org.mozilla.Thunderbird/.thunderbird
+    ~/.var/app/org.mozilla.thunderbird/.thunderbird
     ~/snap/thunderbird/common/.thunderbird
     ~/.var/app/eu.betterbird.Betterbird/.thunderbird
     ~/.var/app/net.thunderbird.Thunderbird/.thunderbird
