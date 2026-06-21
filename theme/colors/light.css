@@ -150,6 +150,24 @@
 	--gnome-tabbar-identity-color-red: var(--gnome-palette-red-3);
 	--gnome-tabbar-identity-color-pink: #ff4b84;
 	--gnome-tabbar-identity-color-purple: var(--gnome-palette-purple-4);
+	
+		/* left sidebar icons */
+  --folder-color-inbox: var(--gnome-palette-blue-3) !important;
+  --folder-color-draft: var(--gnome-palette-purple-3) !important;
+  --folder-color-sent: var(--gnome-palette-green-3) !important;
+  --folder-color-archive: var(--gnome-palette-yellow-5) !important;
+  --folder-color-spam: var(--gnome-palette-red-3) !important;
+  --folder-color-trash: var(--gnome-palette-dark-1) !important;
+  --folder-color-template: var(--gnome-palette-dark-3) !important;
+  
+  /* left sidebar icons - unused */
+  --folder-color-newsletter: var(--color-text-secondary);
+  --folder-color-rss: var(--color-accent-orange);
+  --folder-color-outbox: var(--color-accent-teal);
+  --folder-color-folder: var(--color-warning-hover);
+  --folder-color-folder-filter: var(--color-accent-pink);
+  --folder-color-folder-rss: var(--color-accent-orange);
+  --folder-color-warning: var(--color-text-critical);
 
 	/* Miscellaneous */
 	--gnome-shade-color: rgba(0, 0, 6, 0.07);
@@ -160,6 +178,24 @@
 		--gnome-sidebar-background: #f2f2f4;
 		--gnome-secondary-sidebar-background: #f6f6fa;
 		--gnome-selection-bg: color-mix(in srgb, var(--gnome-view-color) 10%, transparent);
-	}
+		
+		/* left sidebar icons */
+    --folder-color-inbox: var(--gnome-palette-blue-3) !important;
+    --folder-color-draft: var(--gnome-palette-purple-3) !important;
+    --folder-color-sent: var(--gnome-palette-green-3) !important;
+    --folder-color-archive: var(--gnome-palette-yellow-5) !important;
+    --folder-color-spam: var(--gnome-palette-red-3) !important;
+    --folder-color-trash: var(--gnome-palette-dark-1) !important;
+    --folder-color-template: var(--gnome-palette-dark-3) !important;
+
+    /* left sidebar icons - unused */
+    --folder-color-newsletter: var(--color-text-secondary);
+    --folder-color-rss: var(--color-accent-orange);
+    --folder-color-outbox: var(--color-accent-teal);
+    --folder-color-folder: var(--color-warning-hover);
+    --folder-color-folder-filter: var(--color-accent-pink);
+    --folder-color-folder-rss: var(--color-accent-orange);
+    --folder-color-warning: var(--color-text-critical);
+    }
 }
 
