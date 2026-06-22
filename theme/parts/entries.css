@@ -14,10 +14,10 @@ input:not([type="checkbox"], [inputmode="search"], .input-pill),
 	color: var(--gnome-entry-color) !important;
 	height: 34px !important;
 	max-height: 34px !important;
-	margin: 0 !important;
+	margin: 1px !important;
 	padding: 6px 9px !important;
-	box-sizing: border-box;
-	transition: outline 0.3s, outline-offset 0.3s;
+	box-sizing: border-box !important;
+	transition: outline 0.3s, outline-offset 0.3s !important;
 }
 .contentTabSecurity[src] + .contentTabUrlInput {
 	padding-inline-start: 28px !important;

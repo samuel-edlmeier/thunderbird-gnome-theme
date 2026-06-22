@@ -16,6 +16,8 @@
 
 **A GNOME theme for Thunderbird**
 
+This fork of original rafaelmardojai / thunderbird-gnome-theme contains some enhancements. 
+
 This theme follows latest GNOME Adwaita style.
 
 > [!WARNING]

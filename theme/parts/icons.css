@@ -6,7 +6,10 @@
 .button.icon-button,
 .toolbarbutton-1,
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker, 
+toolbarbutton#newButton,
+toolbarbutton#newButton > .toolbarbutton-menu-dropmarker,
+toolbarbutton#newButton > .toolbarbutton-menubutton-dropmarker,
 link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"],
 link[href="chrome://global/content/elements/moz-message-bar.css"] + .container .icon,
 .preview-icon,
@@ -55,6 +58,7 @@ checkbox.treenode-checkbox > .checkbox-check,
 #attachmentToggle,
 .nav-button > .toolbarbutton-icon,
 menupopup > menu::after,
+popupset menupopup#mailContext.no-icon-menupopup img.menu-icon,
 .menu-iconic-icon,
 .tab-close-button::before,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
@@ -64,7 +68,8 @@ menupopup > menu::after,
 menuitem[type="checkbox"],
 menuitem[type="checkbox"][checked="true"],
 menuitem[type="radio"],
-menuitem[type="radio"][checked="true"] {
+menuitem[type="radio"][checked="true"] 
+{
 	fill: var(--gnome-toolbar-icon-fill) !important;
 	-moz-context-properties: fill, fill-opacity !important;
 }
@@ -77,7 +82,101 @@ menuitem[type="radio"][checked="true"] {
 .textbox-search-sign:-moz-window-inactive,
 .textbox-search-clear:-moz-window-inactive,
 .toolbarbutton-icon:-moz-window-inactive,
+.today-pane-cycler:-moz-window-inactive,
+#offline-status:-moz-window-inactive,
+#starMessageButton img,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close:-moz-window-inactive .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon:-moz-window-inactive,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon:-moz-window-inactive,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon:-moz-window-inactive,
+:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
+	fill-opacity: 0.8 !important;
+}
+
+/* Replace icons */
+
+@namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+/* Icons color */
+.button.icon-button,
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker, 
+toolbarbutton#newButton,
+toolbarbutton#newButton > .toolbarbutton-menu-dropmarker,
+toolbarbutton#newButton > .toolbarbutton-menubutton-dropmarker,
+link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"],
+link[href="chrome://global/content/elements/moz-message-bar.css"] + .container .icon,
+.preview-icon,
+.unified-toolbar-button,
+.spaces-toolbar-button img,
+button.email-action-flagged#starMessageButton,
+#placeholderNoMessages::before,
+.cal-event-toolbarbutton .toolbarbutton-icon,
+.twisty,
+.calendar-displayed,
+.miniday-nav-buttons,
+.today-pane-cycler,
+.notification-close,
+.subviewbutton-back .toolbarbutton-icon,
+.subviewbutton-iconic[type="checkbox"] > .toolbarbutton-icon,
+button.button-menu-list,
+.checkbox-check[checked],
+.radio-check[selected],
+#spacesPinnedButton .toolbarbutton-icon,
+#spacesToolbarReveal,
+#offline-status,
+#button-appmenu .toolbarbutton-icon,
+#folderTree > li > .mode-container > .mode-button,
+.tree-table-cell-container button.sorting,
+.tree-columnpicker-button,
+.attachmentcol-column img, .attachment-icon,
+tr[data-properties~="tagged"] .tag-icon,
+[is="tree-view-table"] img:not(#threadColButton img, .tree-button-thread img),
+tr[data-properties~="outgoing"] .correspondentcol-column:not(#hack),
+link[href="chrome://global/skin/dropmarker.css"] + image,
+.search-button-icon,
+.button-star,
+.textbox-search-sign,
+.textbox-search-clear,
+.subviewbutton-back,
+.PanelUI-subView .subviewbutton-nav::after,
+#appMenu-fontSize-controls .toolbarbutton-icon,
+#calendar-add-task-button,
+#todaypane-new-event-button,
+.toolbarbutton-menu-dropmarker,
+#miniday-dropdown-button > .toolbarbutton-menu-dropmarker:not(#hack),
+#calendarListHeader::after,
+#calendar-list > li[calendar-readonly]::before,
+#calendar-list > li[calendar-readonly]::after,
+checkbox.treenode-checkbox > .checkbox-check,
+#attachmentToggle,
+.nav-button > .toolbarbutton-icon,
+menupopup > menu::after,
+popupset menupopup#mailContext.no-icon-menupopup img.menu-icon,
+.menu-iconic-icon,
+.tab-close-button::before,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon,
+menuitem[type="checkbox"],
+menuitem[type="checkbox"][checked="true"],
+menuitem[type="radio"],
+menuitem[type="radio"][checked="true"] 
+{
+	fill: var(--gnome-toolbar-icon-fill) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}
+
+.spaces-toolbar-button img:-moz-window-inactive,
+.toolbarbutton-icon:-moz-window-inactive,
+.button:-moz-window-inactive,
 .search-button-icon:-moz-window-inactive,
+.button-star:-moz-window-inactive,
+.textbox-search-sign:-moz-window-inactive,
+.textbox-search-clear:-moz-window-inactive,
+.toolbarbutton-icon:-moz-window-inactive,
 .today-pane-cycler:-moz-window-inactive,
 #offline-status:-moz-window-inactive,
 #starMessageButton img,
@@ -190,6 +289,7 @@ menuitem[type="radio"][checked="true"] {
 	--font-size-increase: var(--gnome-icon-zoom-in-symbolic) !important;
 }
 
+
 @media (prefers-color-scheme: light) {
 	.button.button-primary.icon-button:not(#hack) {
 		fill: #fff !important;
@@ -264,6 +364,7 @@ treechildren::-moz-tree-twisty(selected, focus, open),
 treechildren::-moz-tree-image(selected, focus),
 treechildren::-moz-tree-image(selected, focus, open),
 .item.client:focus .item-twisty-container,
+toolbarbutton#button-send.toolbarbutton-1 .toolbarbutton-icon,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
 	fill: #fff !important;
@@ -293,8 +394,23 @@ treechildren::-moz-tree-image(selected, focus, open),
 menuitem[type="checkbox"] {
 	list-style-image: none !important;
 }
+
+menupopup#sidebarAbContextMenu.no-accel-menupopup,
+menupopup.textbox-contextmenu,
+menupopup#msgComposeContext,
+toolbox#event-toolbox.mail-toolbox toolbar,
+toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,
+menubar#event-menubar menu menupopup,
+menubar#mail-menubar menu menupopup {
+  & > :is(menu, menuitem) {
+    &[checked="true"], &[selected="true"] {
+      --menuitem-icon: url("chrome://messenger/skin/icons/new/compact/check.svg") !important;
+    }
+  }
+}
+
 menuitem[type="checkbox"][checked="true"] {
-	list-style-image: var(--gnome-icon-select-symbolic) !important;
+	list-style-image: url("../icons/select-symbolic.svg") !important;
 }
 menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;
@@ -380,7 +496,7 @@ treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
 
 /* Search entries */
 .textbox-search-sign {
-	list-style-image: var(--gnome-icon-edit-find-symbolic) !important;
+	list-style-image: url(../icons/edit-find-symbolic.svg) !important;
 }
 .textbox-search-sign {
 	margin: 3px 0;
@@ -448,3 +564,290 @@ checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
 #spacesToolbarReveal {
 	background-image: var(--gnome-icon-last-symbolic) !important;
 }
+
+/* Fix TB Landing Page */
+#readButton::before { background-image: url("../icons/inbox-symbolic.svg") !important; }
+#searchButton::before { background-image: url("../icons/edit-find-symbolic.svg") !important; }
+#composeButton::before { background-image: url("../icons/mail-message-new-symbolic.svg") !important; }
+#filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }
+
+@media (prefers-color-scheme: light) {
+	.button.button-primary.icon-button:not(#hack) {
+		fill: #fff !important;
+	}
+}
+
+/* Tinted icons */
+#folderTree .icon {
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: var(--icon-color) !important;
+}
+
+tr[data-properties~="flagged"] .button-star,
+tr[data-properties~="flagged"] .tree-view-row-flag > .tree-button-flag > img:not(#hack) {
+	fill: var(--gnome-toolbar-star-button) !important;
+}
+tr[data-properties~="tagged"] .tag-icon:not(#hack) {
+	fill: var(--tag-color, currentColor) !important;
+}
+tr[data-properties~="unread"] .tree-view-row-unread > .tree-button-unread > img:not(#hack) {
+	fill: var(--gnome-accent) !important;
+}
+tr[data-properties~="junk"] .tree-button-spam > img:not(#hack) {
+	fill: var(--gnome-palette-red-2) !important;
+}
+
+/* Dimmed icons */
+.searchbar-search-icon,
+.textbox-search-sign,
+.textbox-search-clear {
+	opacity: 0.7 !important;
+}
+.textbox-search-clear:hover {
+	opacity: 1 !important;
+}
+
+/* Fix icons sizes */
+.menu-iconic-icon,
+link[href="chrome://global/skin/dropmarker.css"] + image,
+#calendarListHeader::after,
+#calendar-list > li[calendar-readonly]::after,
+#calendar-list > li[calendar-readonly]::before,
+checkbox.treenode-checkbox > .checkbox-check,
+.twisty > .twisty-icon {
+	height: 16px !important;
+	width: 16px !important;
+}
+button.button-menu-list {
+	background-size: 16px !important;
+}
+
+/* Fix hardcoded images */
+#folderTree li .container > .twisty,
+#starMessageButton,
+#spacesToolbarReveal {
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+}
+#spacesToolbarReveal {
+	width: 16px;
+}
+.tab-close-button img,
+#folderTree li .container > .twisty > .twisty-icon,
+#starMessageButton img,
+#spacesToolbarReveal img {
+	display: none !important;
+}
+
+/* Icons active color */
+treechildren::-moz-tree-twisty(selected, focus),
+treechildren::-moz-tree-twisty(selected, focus, open),
+treechildren::-moz-tree-image(selected, focus),
+treechildren::-moz-tree-image(selected, focus, open),
+.item.client:focus .item-twisty-container,
+toolbarbutton#button-send.toolbarbutton-1 .toolbarbutton-icon,
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty,
+.sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
+	fill: #fff !important;
+}
+
+/* Window buttons */
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-window-close-symbolic) !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-window-maximize-symbolic) !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-window-restore-symbolic)  !important;
+}
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
+}
+:root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-window-minimize-symbolic) !important;
+}
+:root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
+	list-style-image: var(--gnome-icon-view-restore-symbolic) !important;
+}
+
+/* Menu checkbox */
+menuitem[type="checkbox"] {
+	list-style-image: none !important;
+}
+
+menupopup#sidebarAbContextMenu.no-accel-menupopup,
+menupopup.textbox-contextmenu,
+menupopup#msgComposeContext,
+toolbox#event-toolbox.mail-toolbox toolbar,
+toolbox#compose-toolbox.toolbox-top toolbarbutton menupopup,
+menubar#event-menubar menu menupopup,
+menubar#mail-menubar menu menupopup {
+  & > :is(menu, menuitem) {
+    &[checked="true"], &[selected="true"] {
+      --menuitem-icon: url("chrome://messenger/skin/icons/new/compact/check.svg") !important;
+    }
+  }
+}
+
+menuitem[type="checkbox"][checked="true"] {
+	list-style-image: url("../icons/select-symbolic.svg") !important;
+}
+menuitem[type="checkbox"][disabled="true"] .menu-iconic-icon {
+	opacity: 0.5;
+}
+
+/* Menu radio */
+menuitem[type="radio"] {
+	list-style-image: none !important;
+}
+menuitem[type="radio"][checked="true"] {
+	list-style-image: var(--gnome-icon-bullet-symbolic) !important;
+}
+menuitem[type="radio"] .menu-iconic-icon {
+	border-radius: 100%;
+	border: 1px solid var(--gnome-toolbar-icon-fill);
+}
+menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
+	opacity: 0.5;
+}
+
+/* Popovers subview menu arrow */
+.subviewbutton-nav::after,
+menupopup > menu::after {
+	content:  var(--gnome-icon-go-next-symbolic) !important;
+	fill-opacity: 1 !important;
+	opacity: .3;
+	height: 16px;
+	width: 16px;
+}
+.subviewbutton-back {
+	list-style-image: var(--gnome-icon-go-previous-symbolic) !important;
+}
+.subviewbutton-back .toolbarbutton-icon {
+	opacity: .3;
+}
+
+/* Dropmarker */
+link[href="chrome://global/skin/dropmarker.css"] + image {
+	 list-style-image: var(--gnome-icon-pan-down-symbolic) !important;
+}
+.toolbarbutton-menu-dropmarker {
+	content: var(--gnome-icon-pan-down-symbolic) !important;
+}
+
+/* Tree views */
+treechildren::-moz-tree-twisty,
+.item.client .item-twisty-container {
+	list-style-image: var(--gnome-icon-pan-end-symbolic) !important;
+	width: 16px !important;
+	height: 16px !important;
+}
+.item.client .item-twisty-container {
+	background-image: var(--gnome-icon-pan-end-symbolic) !important;
+}
+treechildren::-moz-tree-twisty(open) {
+	list-style-image: var(--gnome-icon-pan-down-symbolic) !important;
+}
+.item.client.closed .item-twisty-container {
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
+}
+
+treechildren::-moz-tree-image(title, container),
+treechildren::-moz-tree-image(title, open) {
+	list-style-image: url("../icons/folder-symbolic.svg") !important;
+}
+treechildren::-moz-tree-image(title, query, dayContainer),
+treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
+	list-style-image: url("../icons/preferences-system-time-symbolic.svg") !important;
+}
+
+#folderTree li.children > .container > .twisty {
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
+	transition: transform 150ms ease;
+}
+#folderTree li.children.collapsed > .container .twisty {
+	transform: rotate(-90deg);
+}
+
+/* Close button */
+.close-icon {
+	list-style-image: var(--gnome-icon-window-close-symbolic) !important;
+}
+
+/* Search entries */
+.textbox-search-sign {
+	list-style-image: url(../icons/edit-find-symbolic.svg) !important;
+}
+.textbox-search-sign {
+	margin: 3px 0;
+	max-height: 16px !important;
+	width: 16px !important;
+}
+/* Text clear */
+.textbox-search-clear {
+	list-style-image: var(--gnome-icon-edit-clear-symbolic) !important;
+}
+
+/* Star message header */
+#starMessageButton {
+	background-image: var(--gnome-icon-non-starred-symbolic) !important;
+}
+#starMessageButton.flagged {
+	background-image: var(--gnome-icon-starred-symbolic) !important;
+}
+
+/* Tab icon */
+.tab-close-button::before {
+	content: var(--gnome-icon-window-close-symbolic) !important;
+}
+
+/* Non starred mail */
+tr:not([data-properties~="flagged"]) .tree-view-row-flag > .tree-button-flag > img,
+tr:not([data-properties~="flagged"]) .button-star {
+	--icon-star: var(--gnome-icon-non-starred-symbolic) !important;
+	--icon-sta-sm: var(--gnome-icon-non-starred-symbolic) !important;
+}
+
+/* Cancel icon */
+.imipDeclineCounterButton, .imipDeclineRecurrencesButton, .imipDeclineButton {
+	list-style-image: var(--gnome-icon-process-stop-symbolic) !important;
+}
+
+/* Sidebar list headers */
+checkbox.treenode-checkbox > .checkbox-check {
+	background-image: var(--gnome-icon-pan-down-symbolic) !important;
+	opacity: .55 !important;
+	transform: rotate(0deg) !important;
+}
+#calendarListHeader > img {
+	visibility: collapse;
+}
+#calendarListHeader::after {
+	content: var(--gnome-icon-pan-down-symbolic);
+	opacity: .55 !important;
+	transition: transform 150ms ease;
+}
+#calendarListHeader[checked="true"]::after,
+checkbox.treenode-checkbox[checked="true"] > .checkbox-check {
+	transform: rotate(-180deg) !important;
+}
+
+/* Calendars list */
+#calendar-list > li[calendar-readonly]::before {
+	content: var(--gnome-icon-padlock-symbolic);
+}
+#calendar-list > li[calendar-muted]::after {
+	content: var(--gnome-icon-notifications-disabled-symbolic);
+}
+
+/* Collapse */
+#spacesToolbarReveal {
+	background-image: var(--gnome-icon-last-symbolic) !important;
+}
+
+/* Fix TB Landing Page */
+#readButton::before { background-image: url("../icons/custom/inbox-symbolic.svg") !important; }
+#searchButton::before { background-image: url("../icons/custom/edit-find-symbolic.svg") !important; }
+#composeButton::before { background-image: url("../icons/custom/mail-message-new-symbolic.svg") !important; }
+#filterButton::before { background-image: url("chrome://messenger/skin/icons/new/compact/filter.svg") !important; }

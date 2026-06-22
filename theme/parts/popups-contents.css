@@ -3,3 +3,11 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 
+
+#accountLogo, .section-title {
+  color: var(--gnome-accent) !important;
+}
+
+section.account-central-section aside.row-container, p#donationParagraph {
+  line-height: 1.5;
+}

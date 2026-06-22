@@ -22,7 +22,9 @@ menupopup {
 }
 
 menu menupopup {
-	margin:	-14px -8px 0px 0px !important;
+	margin-top: -4px !important;
+	margin:	-4px -8px 0px 0px !important;
+	min-height: 200px;
 }
 
 menulist {

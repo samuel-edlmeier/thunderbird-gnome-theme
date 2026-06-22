@@ -1,0 +1,642 @@
+:root {
+  --adwaita-input-border: transparent;
+  --adwaita-input-border-hover: color-mix(in srgb, FieldText 40%, transparent);
+  --adwaita-focus-ring-color: AccentColor;
+  --adwaita-focus-ring-shadow: color-mix(in srgb, AccentColor 30%, transparent);
+  --adwaita-border-radius: var(--gnome-button-radius);
+  --adwaita-transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/*
+******** Controls ********
+*/
+
+checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
+	background-image: url("../icons/custom/select-fixed-symbolic.svg") !important;
+}
+
+radio > .radio-check[selected] {
+	list-style-image: url("../icons/custom/bullet-fixed-symbolic.svg") !important;
+}
+
+/* 
+******** Entries ********
+*/
+
+.attendee-list-container vbox#attendee-list event-attendee input.plain {
+	height: 21px !important;
+	max-height: 21px !important;
+}
+
+richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="true"],
+richlistbox.theme-listbox:focus > richlistitem[current="true"][selected="true"] {
+	outline-color: none important;
+	outline: none !important;
+}
+
+/* fix magnifier position in search fields */
+form button#search-button.button.button-flat.icon-button {
+	padding: 0px 9px 0px 9px !important;
+}
+
+moz-button::part(button),
+input::-moz-search-clear-button {
+	fill: none !important;
+	padding: 4px !important;
+	transform: translateX(-18px) !important; 
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input:not([type]),
+textarea {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  border: 1px solid var(--adwaita-input-border) !important;
+  border-radius: var(--adwaita-border-radius) !important;
+  padding: 6px 10px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: var(--adwaita-transition) !important;
+}
+
+/* --- Hover Status --- */
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="search"]:hover,
+input:not([type]):hover,
+textarea:hover {
+  border-color: var(--adwaita-input-border-hover) !important;
+}
+
+/* --- Focus Status --- */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+input:not([type]):focus,
+textarea:focus {
+  border-color: var(--adwaita-focus-ring-color) !important;
+  box-shadow: 0 0 0 2px var(--adwaita-focus-ring-shadow) !important;
+}
+
+/* 
+******** Buttons ********
+*/
+
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton#newButton[is="toolbarbutton-menu-button"],
+button#booksPaneCreateContact,
+#calendar-status-todaypane-button,
+#filterListGrid #filterActionButtons button,
+#filterListGrid #filterListBox button {
+	-moz-appearance: none !important;
+	align-items: center !important;
+	background-color: var(--gnome-button-background) !important;
+	border-radius: var(--gnome-button-radius) !important;
+	border: 0 !important;
+	color: var(--gnome-window-color) !important;
+	font: menu !important;
+	font-weight: bold !important;
+	justify-content: center !important;
+	max-height: var(--gnome-button-size) !important;
+	min-height: var(--gnome-button-size) !important;
+	min-width: var(--gnome-button-size) !important;
+	outline: 0 !important;
+	padding: 0 1px !important;
+	height: 34px !important;
+	max-height: 34px !important;
+	min-height: 34px !important;
+	min-width: 34px !important;
+	color: var(--gnome-toolbar-color) !important;
+	outline: 0 !important;
+	font: menu !important;
+	-moz-box-align: center !important;
+	transition: background-color .3s;
+}
+
+/* Hover buttons */
+.button:not(.twisty):not([disabled="true"]),
+link[href="chrome://global/content/elements/moz-button.css"] + button:not([disabled="true"]),
+.notification-button:not(.button-menu-list):not([disabled="true"]),
+.address-pill:not([disabled="true"]),
+#unifiedToolbar .unified-toolbar-button,
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]),
+menulist:not([disabled="true"]),
+button.button-menu-list:not([disabled="true"]) {
+  &:not([disabled="true"]) {
+    &:hover {
+      outline: 0 !important;
+      background-color: var(--gnome-button-hover-background) !important;
+    }
+  }
+}
+
+html#calendar-event-window dialog#calendar-task-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#calendar-event-window dialog#calendar-event-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#msgcomposeWindow toolbox#compose-toolbox.toolbox-top toolbar#composeToolbar2.chromeclass-toolbar.themeable-full toolbarbutton#button-send.toolbarbutton-1
+ {
+  &:not([disabled="true"]) {
+    &:hover {
+      outline: 0 !important;
+      background-color: var(--gnome-accent-bg) !important;
+    }
+  }
+}
+
+html#calendar-event-window dialog#calendar-task-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#calendar-event-window dialog#calendar-event-dialog toolbox#event-toolbox.mail-toolbox toolbar#event-toolbar.chromeclass-toolbar.themeable-full toolbarbutton#button-saveandclose.cal-event-toolbarbutton.toolbarbutton-1,
+html#msgcomposeWindow toolbox#compose-toolbox.toolbox-top toolbar#composeToolbar2.chromeclass-toolbar.themeable-full toolbarbutton#button-send.toolbarbutton-1
+{
+  background-color: var(--gnome-accent-bg) !important;
+}
+
+/* Hover flat buttons */
+.button.button-flat:not([disabled="true"], [aria-pressed="true"]):hover,
+.button.icon-button:not(.button-group .button):not([disabled="true"], [aria-pressed="true"]):hover,
+.toolbarbutton-1:not([is="toolbarbutton-menu-button"]):not([disabled="true"], [open]):hover,
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):hover,
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:not([disabled="true"], [open]):hover,
+toolbarbutton#newButton:not([is="toolbarbutton-menu-button"]):not([disabled="true"], [open]):hover,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):hover,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker:not([disabled="true"]):hover,
+link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"]:not([disabled="true"], [aria-pressed="true"]):hover,
+.dialog-button-box button:not([disabled="true"]):hover,
+.close-icon:not([disabled="true"]):hover,
+button.calview-toggle-item:not([disabled="true"]):hover,
+.notification-close:not([disabled="true"]):hover,
+.today-pane-cycler:not([disabled="true"]):hover,
+.nav-button:not([disabled="true"]):hover,
+.miniday-nav-buttons:not([disabled="true"]):hover,
+#calendar-add-task-button:not([disabled="true"]):hover,
+#todaypane-new-event-button:not([disabled="true"]):hover,
+#miniday-dropdown-button:not([disabled="true"]):hover,
+#unifiedToolbar toolbarbutton:not(.subviewbutton):not([open]):not([disabled="true"]):not([checked]):hover,
+#starMessageButton:not([disabled="true"]):hover,
+.icons-only #unifiedToolbar .unified-toolbar-button:hover,
+.icons-beside-text #unifiedToolbar .unified-toolbar-button:hover,
+.spaces-toolbar-button:hover,
+#offline-status:not([disabled="true"]):hover,
+#spacesToolbarReveal:hover,
+#calendar-status-todaypane-button:hover,
+#filterListGrid #filterActionButtons button:not([disabled="true"]):hover,
+#filterListGrid #filterListBox button:not([disabled="true"]):hover
+{
+	outline: 0 !important;
+	background-color: var(--gnome-hover-color) !important;
+}
+
+/* Active buttons */
+.button:not(.twisty):active,
+.button[open],
+.button.check-button[aria-pressed="true"],
+menulist:not([disabled="true"]):is(:active, [open])
+link[href="chrome://global/content/elements/moz-button.css"] + button:active,
+button.button-menu-list:is(:active, [open]),
+.notification-button:not(.button-menu-list):not([disabled="true"]):active,
+.address-pill:not([disabled="true"]):active,
+#unifiedToolbar .unified-toolbar-button:active,
+#appMenu-popup .toolbaritem-combined-buttons .subviewbutton:not([disabled="true"]):is(:active, [checked="true"]),
+#filterListGrid #filterActionButtons button:not([disabled="true"]):active,
+#filterListGrid #filterListBox button:not([disabled="true"]):active
+{
+	background-color: var(--gnome-button-active-background) !important;
+}
+
+/* Active flat buttons */
+.button.button-flat:not([disabled="true"]):active,
+.button.button-flat.check-button[aria-pressed="true"],
+.button.icon-button:not(.button-group .button):not([disabled="true"]):active,
+.button.icon-button.check-button:not(.button-group .button):not([disabled="true"])[aria-pressed="true"],
+.toolbarbutton-1:not([is="toolbarbutton-menu-button"], [disabled="true"]):is(:active, [open]),
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
+.toolbarbutton-1:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
+toolbarbutton#newButton:not([is="toolbarbutton-menu-button"], [disabled="true"]):is(:active, [open]),
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-button:not([disabled="true"]):active,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"], [disabled="true"]) > .toolbarbutton-menubutton-dropmarker:is(:active, [open]),
+link[href="chrome://global/content/elements/moz-button.css"] + button[type~="icon"]:not([disabled="true"]):active,
+.dialog-button-box button:not([disabled="true"]):active,
+.close-icon:not([disabled="true"]):active,
+.notification-close:not([disabled="true"]):active,
+.today-pane-cycler:not([disabled="true"]):active,
+.nav-button:not([disabled="true"]):active,
+.miniday-nav-buttons:not([disabled="true"]):active,
+#todaypane-new-event-button:not([disabled="true"]):active,
+#calendar-add-task-button:not([disabled="true"]):active,
+#miniday-dropdown-button:not([disabled="true"]):is(:active, [open]),
+#unifiedToolbar toolbarbutton:not(.subviewbutton):not([disabled="true"]):not(#hack):active,
+#unifiedToolbar toolbarbutton:not(.subviewbutton):not(.subviewbutton):not([disabled="true"])[open],
+#unifiedToolbar toolbarbutton:not(.subviewbutton):not([disabled="true"])[checked],
+#starMessageButton:active,
+.icons-only #unifiedToolbar .unified-toolbar-button:active,
+.icons-beside-text #unifiedToolbar .unified-toolbar-button:active,
+.spaces-toolbar-button:active,
+#offline-status:active,
+#spacesToolbarReveal:active,
+#calendar-status-todaypane-button:is(:active, [checked="true"])
+{
+	background-color: var(--gnome-active-color) !important;
+}
+
+/* Disabled buttons */
+.button[disabled="true"],
+.toolbarbutton-1[disabled="true"],
+.dialog-button-box button[disabled="true"],
+.close-icon[disabled="true"],
+.nav-button[disabled="true"],
+#unifiedToolbar toolbarbutton:not(.subviewbutton)[disabled="true"],
+#unifiedToolbar .unified-toolbar-button[disabled="true"],
+#todaypane-new-event-button[disabled="true"] {
+	opacity: .5 !important;
+}
+
+/* Split buttons (flat) */
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) {
+	border-radius: 6px !important;
+}
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]):hover {
+	background-color: var(--gnome-hover-color) !important;
+}
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button {
+	position: relative !important;
+}
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker  {
+	min-width: 24px !important;
+	width: 24px !important;
+}
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::before {
+	border-right: 1px solid var(--gnome-border-color) !important;
+	content: "" !important;
+	height: 22px!important;
+	position: absolute!important;
+	right: 0 !important;
+	top: 6px!important;
+	transition: opacity .3s !important;
+}
+
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]):hover > .toolbarbutton-menubutton-button::before
+{
+	opacity: 0 !important;
+}
+
+/* Opaque buttons */
+.button.button-primary {
+	color: white !important;
+	font-weight: bold !important;
+}
+
+/* Buttons with destructive action */
+#editContactPanelDeleteContactButton,
+#editBookmarkPanelRemoveButton,
+#PanelUI-panic-view-button {
+  color: var(--gnome-palette-light-1) !important;
+  background-color: light-dark(var(--color-red-60), var(--color-red-50)) !important;
+}
+
+/* Opaque buttons hover */
+#editContactPanelDeleteContactButton:not(#hack):hover,
+#editBookmarkPanelRemoveButton:not(#hack):hover,
+#PanelUI-panic-view-button:not(#hack):hover,
+.button.button-primary:not(#hack):hover {
+	filter: brightness(110%) !important;
+}
+
+/* Opaque buttons active */
+#editContactPanelDeleteContactButton:not(#hack):active,
+#editBookmarkPanelRemoveButton:not(#hack):active,
+#PanelUI-panic-view-button:not(#hack):active,
+.button.button-primary:not(#hack):active {
+	filter: brightness(80%) !important;
+}
+
+/* Fix TB Landing Page */
+#filterButton::before, #composeButton::before, #searchButton::before, #readButton::before   {
+	fill: var(--gnome-toolbar-icon-fill) !important;
+	-moz-context-properties: fill, fill-opacity !important;
+}
+
+span.button-background {
+	fill: none !important;
+}
+
+button#main-button  {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	height: 24px !important;
+	max-height: 24px !important;
+	min-height: 24px !important;
+	min-width: 24px !important;
+}
+
+/* 
+******** button-fixes ******** 
+*/
+
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker {
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 9px 4px !important;;
+}
+
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-dropmarker::before,
+toolbarbutton#newButton:is([is="toolbarbutton-menu-button"]) > .toolbarbutton-menubutton-button::before {
+    display: none !important;
+}
+
+/* Composer Window, Landing Page */
+button#donebutton,
+toolbarbutton#button-saveandclose,
+toolbarbutton#button-send, 
+#button-send, 
+#setupEmail, 
+#setupAddressBook, 
+#setupCalendar, 
+#setupFilelink, 
+#setupChat,
+#setupFeeds, 
+#setupNewsgroups,
+#importButton {
+  background-color: var(--gnome-accent-bg) !important;
+  font-weight: 700 !important;
+}
+
+button#donebutton,
+button#setupEmail.btn-hub.btn-inline,
+toolbarbutton#button-saveandclose.toolbarbutton-1 label.toolbarbutton-text,
+toolbarbutton#button-send.toolbarbutton-1 label.toolbarbutton-text, 
+button#setupEmail, 
+button#setupAddressBook, 
+button#setupCalendar, 
+button#setupFilelink, 
+button#setupChat,
+button#setupFeeds, 
+button#setupNewsgroups,
+button#importButton {
+  color: var(--gnome-palette-light-1) !important;
+  border-radius: var(--adwaita-border-radius) !important;
+}
+
+button#restoreDefault:active:not([disabled="true"]), 
+button#donebutton:hover:not([disabled="true"]), 
+toolbarbutton#button-saveandclose:hover:not([disabled="true"]), 
+#button-send:hover:not([disabled="true"]), 
+#setupEmail:hover:not([disabled="true"]), 
+#setupAddressBook:hover:not([disabled="true"]), 
+#setupCalendar:hover:not([disabled="true"]), 
+#setupFilelink:hover:not([disabled="true"]), 
+#setupChat:hover:not([disabled="true"]),
+#setupFeeds:hover:not([disabled="true"]),
+#setupNewsgroups:hover:not([disabled="true"]),
+#importButton:hover:not([disabled="true"]){
+  filter: brightness(110%) !important;; 
+}
+
+button#restoreDefault:hover:not([disabled="true"]), 
+button#donebutton:active:not([disabled="true"]), 
+#setupEmail:active:not([disabled="true"]), 
+#setupAddressBook:active:not([disabled="true"]), 
+#setupCalendar:active:not([disabled="true"]), 
+#setupFilelink:active:not([disabled="true"]), 
+#setupChat:active:not([disabled="true"]),
+#setupFeeds:active:not([disabled="true"]), 
+#setupNewsgroups:active:not([disabled="true"]),
+#importButton:active:not([disabled="true"]),
+toolbarbutton#button-saveandclose:active:not([disabled="true"]),
+#button-send:active:not([disabled="true"]) {
+  filter: brightness(80%) !important;
+}
+
+toolbarbutton#button-saveandclose .toolbarbutton-icon,
+toolbarbutton#button-saveandclose .toolbarbutton-text,
+#button-send .toolbarbutton-icon,
+#button-send .toolbarbutton-text {
+  fill: var(--gnome-palette-light-1) !important;
+  color: var(--gnome-palette-light-1) !important;
+}
+
+#setupEmail, 
+#setupAddressBook, 
+#setupCalendar, 
+#setupFilelink, 
+#setupChat, 
+#setupFeeds, 
+#setupNewsgroups,
+#importButton {
+  fill: var(--gnome-accent-bg) !important;
+  color: var(--gnome-palette-light-1) !important;
+  stroke: var(--gnome-palette-light-1) !important;
+  -moz-context-properties: fill, stroke !important;
+}
+
+.btn-hub {
+  box-shadow: none !important;
+  stroke: none !important;
+}
+
+/* Mail Composer */
+button#toButton hbox.box-inherit.button-box label.button-text::before {content: "To" !important;}
+button#ccButton hbox.box-inherit.button-box label.button-text::before {content: "CC" !important;}
+button#bccButton hbox.box-inherit.button-box label.button-text::before {content: "BCC" !important;}
+
+
+hbox#subject-box hbox#msgSubjectContainer.input-container moz-input-box { 
+	margin-right: 8px !important;
+ }
+
+#msgSubject {
+	transition: outline 0.3s, outline-offset 0.3s !important;
+}
+
+.address-label-container, #identityLabel-box, #subjectLabel-box {
+  width: 40px !important;
+  margin-left: -0.5em !important;
+  overflow:hidden !important;
+}
+
+/* Overwrite text labels to ensure there is enough space */
+label#identityLabel::before {content: "From" !important;}
+label#toAddrLabel::before {content: "To" !important;}
+label#replyAddrLabel::before {content: "RE" !important;}
+label#ccAddrLabel::before {content: "CC" !important;}
+label#bccAddrLabel::before {content: "BCC" !important;}
+label#subjectLabel::before, #subjectLabel::before {content: "Sub." !important;}
+
+/* Mail Account Overview */
+ol#accounttree li ul lihbox#label-box label#label {
+  font-weight: 400 !important;
+}
+
+button#accountTreeCreateAccount,
+button#booksPaneCreateContact {
+  background-color: var(--gnome-accent-bg) !important;
+}
+
+/* Accent buttons hover fade */
+#button-send:hover:not([disabled="true"]),
+.button.button-primary:not(#hack):hover {
+  background-color: var(--gnome-accent-bg) !important;
+	filter: brightness(110%) !important;
+	transition: filter .25s, background-color .25s !important;
+}
+
+/* Tasks */
+hbox#other-actions-box vbox#task-actions-toolbox.inline-toolbox hbox#task-actions-toolbar.themeable-brighttext toolbarbutton#task-actions-priority.toolbarbutton-1.message-header-view-button,
+hbox#other-actions-box vbox#task-actions-toolbox.inline-toolbox hbox#task-actions-toolbar.themeable-brighttext toolbarbutton#task-actions-category.toolbarbutton-1.message-header-view-button
+{
+	padding: 2px 24px 2px 9px !important;
+}
+
+/* composer window */
+#button-url { list-style-image: url("../icons/composer/mail-attachment-symbolic.svg") !important; }
+#button-attach { list-style-image: url("../icons/composer/mail-attachment-symbolic.svg") !important; }
+#button-send { list-style-image: url("../icons/composer/mail-symbolic.svg") !important; }
+button#setupEmail.btn-inline::before { --icon-mail: var(--account-central-mail) !important; }
+button#setupAddressBook.btn-inline::before { --icon-address-book: var(--account-central-address-book) !important; }
+button#setupCalendar.btn-inline::before { --icon-calendar: var(--account-central-calendar) !important; }
+button#setupFilelink.btn-inline::before { --icon-link: var(--account-central-link) !important; }
+button#setupChat.btn-inline::before { --icon-chat: var(--account-central-chat) !important; }
+button#setupFeeds.btn-inline::before { --icon-rss: var(--account-central-rss) !important; }
+button#setupNewsgroups.btn-inline::before { --icon-newsletter: var(--account-central-newsletter) !important;}
+#button-encryption { list-style-image: url("../icons/composer/padlock-insecure-symbolic.svg") !important; }
+#spellingButton { list-style-image: url("../icons/composer/tools-check-spelling-symbolic.svg") !important; }
+#button-attendees, #button-contacts { list-style-image: url("../icons/composer/address-book-symbolic.svg") !important; }
+#button-save, #button-saveandclose { list-style-image: url("../icons/composer/folder-download-symbolic.svg") !important; }
+#newButtondropmarker.toolbarbutton-menubutton-dropmarker, #toolbarbutton-menubutton-dropmarker, .toolbarbutton-menubutton-dropmarker { content: url("../icons/composer/pan-down-symbolic.svg") !important; }
+#button-privacy { list-style-image: url("../icons/composer/padlock-symbolic.svg") !important; }
+#button-delete { list-style-image: url("../icons/composer/user-trash-symbolic.svg") !important; }
+& #abContextMenuButton { list-style-image: url("../icons/composer/view-more-symbolic.svg") !important; }
+
+/* 
+****** Infobar modifications and fixes ******
+*/
+notification-message[message-bar-type="infobar"] {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-color: var(--gnome-window-background) !important;
+  border-radius: 12px !important;
+  margin: 8px 12px !important; 
+  padding: 6px 10px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden !important;
+  max-height: 150px !important; 
+  transition: opacity 0.2s ease-out, 
+              max-height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, 
+              margin 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, 
+              padding 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s,
+              border-width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s !important;
+}
+
+/* Fade-Out  */
+notification-message[style*="opacity: 0"] {
+  opacity: 0 !important;
+  max-height: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-width: 0 !important;
+}
+
+#mail-notification-top,
+.notificationbox-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+notification-message button.notification-button {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  padding-top: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  padding-left: 14px;
+  margin-left: 8px !important;
+  font-weight: 700 !important;
+  min-height: 30px !important;
+  transition: background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+notification-message .close-icon,
+notification-message button.close {
+  -moz-appearance: none !important;
+  appearance: none !important;
+  border-radius: 50% !important;
+  padding: 6px !important;
+  width: 28px !important;
+  height: 28px !important;
+  transition: background-color 0.2s !important;
+}
+
+link[href="chrome://global/content/elements/moz-message-bar.css"] + .container,
+#mail-notification-top div.container {
+  background-color: var(--gnome-window-background) !important;
+}
+
+/* 
+****** Popups ******
+*/
+
+menubar > menu {
+  background-color: transparent !important;
+  transition: all 0.3s ease;
+  padding: 6px;
+  &:hover {
+    background-color: transparent !important;
+  }
+  &[open] {
+    background-color: var(--gnome-selected-color) !important;
+    border-bottom-color: transparent !important;
+    border-radius: 8px !important;
+  }
+}
+
+#tabs-toolbar, .inline-toolbar, .contentTabToolbar, toolbar, #event-toolbar {
+  border-bottom: none !important;
+}
+
+#unifiedToolbar toolbarbutton#spacesPinnedButton.button.toolbar-button {
+-moz-context-properties: none !important
+}
+
+html#CustomizeToolbarWindow menupopup#modelistpopup.in-menulist {
+	min-height: 200px !important;
+}
+
+
+/* 
+****** Toolbox ******
+*/
+
+#compose-toolbox:not([hidden]) {
+	border-bottom: 1px solid color-mix(in srgb, var(--sidebar-border-color) 30%, transparent) !important;
+}
+
+/*
+****** Folder Pane ******
+*/
+
+#folderPane {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/*
+****** Title Bar ******
+*/
+#titlebar {
+  border-bottom: none !important;
+}
+
+/*
+****** Calendar, Tasks Button Side Panel
+*/
+#primaryButtonSidePanel {
+  background-color: var(--gnome-sidebar-background) !important;
+}
